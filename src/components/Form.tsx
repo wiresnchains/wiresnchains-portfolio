@@ -71,42 +71,44 @@ export function ContactForm() {
                     }
 
                     try {
+                        let payload = {
+                            embeds: [
+                                {
+                                    title: "Contact Form",
+                                    timestamp: new Date().toISOString(),
+                                    fields: [
+                                        {
+                                            name: "First Name",
+                                            value: firstName,
+                                            inline: true
+                                        },
+                                        {
+                                            name: "Second Name",
+                                            value: lastName,
+                                            inline: true
+                                        },
+                                        {
+                                            name: "E-mail",
+                                            value: email
+                                        },
+                                        {
+                                            name: "Message",
+                                            value: message
+                                        }
+                                    ],
+                                    footer: {
+                                        text: "User's local time"
+                                    }
+                                }
+                            ]
+                        };
+
                         let result = await fetch(process.env.REACT_APP_CONTACT_DISCORD_WEBHOOK_URL as string, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                            body: JSON.stringify({
-                                embeds: [
-                                    {
-                                        title: "Contact Form",
-                                        timestamp: new Date().toISOString(),
-                                        fields: [
-                                            {
-                                                name: "First Name",
-                                                value: firstName,
-                                                inline: true
-                                            },
-                                            {
-                                                name: "Second Name",
-                                                value: lastName,
-                                                inline: true
-                                            },
-                                            {
-                                                name: "E-mail",
-                                                value: email
-                                            },
-                                            {
-                                                name: "Message",
-                                                value: message
-                                            }
-                                        ],
-                                        footer: {
-                                            text: "User's local time"
-                                        }
-                                    }
-                                ]
-                            })
+                            body: JSON.stringify(payload)
                         });
 
                         if (!result.ok)
