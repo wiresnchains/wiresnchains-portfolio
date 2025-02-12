@@ -8,8 +8,13 @@ export function Hero({ children }: { children: ReactNode }) {
         <section className="hero">
             <div className="hero-content">
                 {children}
-                <FiChevronDown className="scroll-indicator" />
             </div>
         </section>
+    );
+}
+
+export function ScrollIndicator({ onClick }: { onClick?: () => any }) {
+    return (
+        <FiChevronDown className="scroll-indicator" onClick={onClick} />
     );
 }

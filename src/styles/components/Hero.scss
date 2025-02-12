@@ -1,5 +1,6 @@
 @use "../settings/sizing.scss";
 @use "../settings/colors.scss";
+@use "../settings/utils.scss";
 
 @keyframes scroll-jump {
     0% {  
@@ -20,10 +21,12 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    color: #fff;
+
+    @include utils.dim-background(#000, 0.5, "../../assets/images/wallpaper.jpg");
 
     .hero-content {
         text-align: center;
-        max-width: 25%;
 
         * {
             margin-bottom: sizing.$item-spacing;

@@ -1,0 +1,5 @@
+@mixin dim-background($target, $opacity, $url) {
+    background: linear-gradient(rgba($target, $opacity), rgba($target, $opacity)), url($url);
+    background-size: cover;
+    background-position: center;
+}
