@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LanguageProvider } from "./hooks/LanguageProvider";
 
 import { Home } from "./views/Home";
+import { Projects } from "./views/Projects";
 
 import "./styles/style.scss";
 
@@ -18,6 +19,10 @@ import "./styles/style.scss";
         {
             path: "/",
             element: <Home />
+        },
+        {
+            path: "/projects",
+            element: <Projects />
         }
     ]);
 

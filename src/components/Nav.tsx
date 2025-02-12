@@ -43,12 +43,18 @@ export function NavItem({ children }: { children: ReactNode }) {
     );
 }
 
-export function Nav({ children }: { children: ReactNode }) {
+export function Nav({ alwaysScrolled, children }: { alwaysScrolled?: boolean, children: ReactNode }) {
     const [scrolled, setScrolled] = useState(false);
 
-    window.addEventListener("scroll", () => {
-        setScrolled(window.scrollY > 1);
-    });
+    if (!alwaysScrolled) {
+        window.addEventListener("scroll", () => {
+            setScrolled(window.scrollY > 1);
+        });
+    }
+    else {
+        if (!scrolled)
+            setScrolled(true);
+    }
 
     return (
         <nav className={scrolled ? "nav show-background" : "nav"}>
@@ -57,11 +63,11 @@ export function Nav({ children }: { children: ReactNode }) {
     );
 }
 
-export function Navbar() {
+export function Navbar({ alwaysScrolled }: { alwaysScrolled?: boolean }) {
     const language = useLanguage();
     
     return (
-        <Nav>
+        <Nav alwaysScrolled={alwaysScrolled}>
             <NavGroup side={NavGroupSide.Left}>
                 <NavItem>
                     <h3>{language.dictionary.heading}</h3>
@@ -70,7 +76,7 @@ export function Navbar() {
                     <NavLink to="/">{language.dictionary.home}</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/experience">{language.dictionary.experience}</NavLink>
+                    <NavLink to="/projects">{language.dictionary.projects}</NavLink>
                 </NavItem>
                 <NavItem>
                     <DropdownMenu title={language.dictionary.language}>
