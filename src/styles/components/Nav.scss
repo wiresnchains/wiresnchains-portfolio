@@ -1,0 +1,41 @@
+@use "../settings/sizing.scss";
+@use "../settings/colors.scss";
+
+.nav {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    gap: sizing.$item-spacing;
+    border: 1px solid colors.$border;
+
+    .nav-group {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: sizing.$item-spacing;
+
+        &.left {
+            // TODO
+        }
+
+        &.right {
+            // TODO
+        }
+
+        .nav-item {
+
+            a {
+                color: colors.$text;
+
+                &:hover {
+                    color: colors.$link-hover;
+                }
+
+                &.active {
+                    color: colors.$link;
+                }
+            }
+        }
+    }
+}

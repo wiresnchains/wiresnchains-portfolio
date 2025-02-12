@@ -1,0 +1,51 @@
+@use "../settings/sizing.scss";
+
+.dropdown-menu {
+    position: relative;
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: none;
+        outline: none;
+        background: none;
+
+        .icon-open {
+            display: none;
+        }
+        
+        .icon-closed {
+            display: block;
+        }
+    }
+
+    .dropdown-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        list-style: none;
+
+        .dropdown-item {
+
+        }
+    }
+
+    &:hover {
+        .dropdown-toggle {
+            .icon-open {
+                display: block;
+            }
+
+            .icon-closed {
+                display: none;
+            }
+        }
+
+        .dropdown-list {
+            display: block;
+        }
+    }
+}
