@@ -47,7 +47,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         failedToSendMessage: "Het bericht kon niet worden verzonden, probeer het later opnieuw",
         messageSent: "Het bericht is succesvol verzonden",
         emptyFields: "Lege velden",
-        projects: "Projected",
+        projects: "Projecten",
 
         // Navigation
         home: "Index",
