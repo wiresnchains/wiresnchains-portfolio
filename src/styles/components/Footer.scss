@@ -1,0 +1,22 @@
+@use "../settings/colors.scss";
+
+.footer {
+    background: colors.$text;
+    color: colors.$body;
+    padding: 3rem 15%;
+    width: 100%;
+    display: flex;
+    gap: 10rem;
+
+    .footer-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+
+        .footer-item {
+            font-size: 0.9rem;
+            width: 100%;
+        }
+    }
+}

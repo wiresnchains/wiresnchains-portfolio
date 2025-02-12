@@ -24,6 +24,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         desktopDev: "Desktop/Game Development",
         webDev: "Web Development",
         tools: "Tools",
+        otherLinks: "Other links",
 
         // Navigation
         home: "Home",
@@ -54,6 +55,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         desktopDev: "Desktop Applicaties/Game Ontwikkeling",
         webDev: "Web Ontwikkeling",
         tools: "Hulpmiddelen",
+        otherLinks: "Andere linken",
 
         // Navigation
         home: "Index",

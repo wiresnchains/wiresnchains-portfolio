@@ -8,6 +8,7 @@ import { ContactModal } from "../components/Modal";
 import { Block } from "../components/Block";
 import { FluidContainer } from "../components/FluidContainer";
 import { Tag } from "../components/Tag";
+import { Footer } from "../components/Footer";
 
 export function Home() {
     const language = useLanguage();
@@ -60,6 +61,8 @@ export function Home() {
                     <ContactForm />
                 </FluidContainer>
             </Block>
+            
+            <Footer />
 
             <Navbar />
             {showContact && <ContactModal onClose={() => setShowContact(false)} />}
