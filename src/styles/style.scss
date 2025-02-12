@@ -1,0 +1,60 @@
+@use "./settings/colors.scss";
+@use "./settings/fonts.scss";
+@use "./settings/timing.scss";
+
+:root {
+    font-size: 14px;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: fonts.$font-family;
+}
+
+body {
+    background-color: colors.$body;
+    color: colors.$text;
+}
+
+button, input, textarea, label {
+    display: block;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.8rem;
+}
+
+label {
+    font-weight: 500;
+}
+
+a {
+    color: colors.$link;
+    transition: timing.$anim-time color;
+    text-decoration: none;
+
+    &:hover {
+        color: colors.$link-hover;
+    }
+}
