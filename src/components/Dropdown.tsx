@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import "../styles/components/Dropdown.scss";
 
 export function DropdownMenu({ title, children }: { title: string; children: ReactNode }) {
     return (
         <div className="dropdown-menu">
-            <button className="dropdown-toggle">{title} <span className="icon-open"><FaChevronUp /></span> <span className="icon-closed"><FaChevronDown /></span></button>
+            <button className="dropdown-toggle">{title} <span className="icon-open"><FiChevronUp /></span> <span className="icon-closed"><FiChevronDown /></span></button>
             <DropdownList>
                 {children}
             </DropdownList>

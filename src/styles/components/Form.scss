@@ -1,0 +1,43 @@
+@use "../settings/sizing.scss";
+@use "../settings/colors.scss";
+
+@mixin hover($color) {
+    &:hover {
+        background-color: $color;
+    }
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: sizing.$frame-padding;
+    border-radius: sizing.$border-rounding;
+    font-weight: 500;
+    color: #fff;
+
+    &.btn-primary {
+        background-color: colors.$primary;
+        @include hover(colors.$primary-hover);
+    }
+
+    &.btn-secondary {
+        background-color: colors.$secondary;
+        @include hover(colors.$secondary-hover);
+    }
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: sizing.$item-spacing;
+
+    .form-row {
+        display: flex;
+        width: 100%;
+        gap: sizing.$item-spacing;
+
+        * {
+            width: 100%;
+        }
+    }
+}

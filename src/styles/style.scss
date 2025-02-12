@@ -18,6 +18,10 @@ body {
     color: colors.$text;
 }
 
+button {
+    cursor: pointer;
+}
+
 button, input, textarea, label {
     font-size: 1rem;
     display: block;
@@ -59,4 +63,8 @@ a {
     &:hover {
         color: colors.$link-hover;
     }
+}
+
+.muted {
+    color: rgb(colors.$text, 0.5);
 }

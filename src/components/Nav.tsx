@@ -62,6 +62,9 @@ export function Navbar() {
                 <NavItem>
                     <NavLink to="/">{language.dictionary.home}</NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink to="/experience">{language.dictionary.experience}</NavLink>
+                </NavItem>
             </NavGroup>
             <NavGroup side={NavGroupSide.Right}>
                 <NavItem>

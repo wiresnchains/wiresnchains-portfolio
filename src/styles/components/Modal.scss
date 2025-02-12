@@ -1,0 +1,46 @@
+@use "../settings/sizing.scss";
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100svh;
+    width: 100svw;
+    background: rgba(#000, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-window {
+        background-color: #fff;
+        padding: 1.5rem;
+        width: 40rem;
+
+        .modal-header {
+            position: relative;
+            margin-bottom: sizing.$item-spacing;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .modal-close {
+                border: none;
+                outline: none;
+                position: absolute;
+                background: none;
+                top: 0;
+                right: 0;
+
+                &:hover {
+                    animation: spin 0.5s infinite;
+                }
+            }
+        }
+    }
+}

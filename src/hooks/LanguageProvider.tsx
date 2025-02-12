@@ -7,10 +7,13 @@ interface ILanguageDictionary {
 const dictionaryList: { [key: string]: ILanguageDictionary } = {
     EN: {
         // Text
-        greeting: "Hello, World!",
+        heading: "My portfolio",
+        description: "Something...",
+        contact: "Contact",
 
         // Navigation
         home: "Home",
+        experience: "Experience",
 
         // Languages
         language: "Language",
@@ -20,10 +23,13 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
 
     NL: {
         // Text
-        greeting: "Hallo, Wereld!",
+        heading: "Mijn Portfolio",
+        description: "Iets...",
+        contact: "Contact",
 
         // Navigation
         home: "Index",
+        experience: "Ervaring",
 
         // Languages
         language: "Taal",
