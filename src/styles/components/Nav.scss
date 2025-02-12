@@ -1,16 +1,16 @@
 @use "../settings/colors.scss";
+@use "../settings/timing.scss";
 
 .nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100svw;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 0.8rem 2rem;
     gap: 2rem;
-    background: colors.$body;
-    border: 1px solid colors.$border;
+    transition: timing.$anim-time background, timing.$anim-time border-bottom;
 
     .nav-group {
         display: flex;
@@ -27,17 +27,27 @@
         }
 
         .nav-item {
+            * {
+                color: #fff;
+            }
 
             a {
-                color: colors.$text;
-
-                &:hover {
-                    color: colors.$link-hover;
-                }
-
                 &.active {
                     color: colors.$link;
                 }
+            }
+        }
+    }
+
+    &.show-background {
+        background: colors.$body;
+        border-bottom: 1px solid colors.$border;
+
+        .nav-item * {
+            color: colors.$text;
+
+            &:hover {
+                color: colors.$link-hover;
             }
         }
     }

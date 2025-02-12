@@ -44,8 +44,14 @@ export function NavItem({ children }: { children: ReactNode }) {
 }
 
 export function Nav({ children }: { children: ReactNode }) {
+    const [scrolled, setScrolled] = useState(false);
+
+    window.addEventListener("scroll", () => {
+        setScrolled(window.scrollY > 1);
+    });
+
     return (
-        <nav className="nav">
+        <nav className={scrolled ? "nav show-background" : "nav"}>
             {children}
         </nav>
     );
