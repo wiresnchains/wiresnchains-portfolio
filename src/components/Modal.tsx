@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import { FiX } from "react-icons/fi";
+
+import { useLanguage } from "../hooks/LanguageProvider";
+import { ContactForm } from "./Form";
 
 import "../styles/components/Modal.scss";
-import { useLanguage } from "../hooks/LanguageProvider";
-import { FiX } from "react-icons/fi";
-import { Form, FormRow, Button } from "./Form";
 
 type ModelCloseEventHandler = () => any;
 
@@ -33,16 +34,9 @@ export function ContactModal({ onClose }: { onClose: ModelCloseEventHandler }) {
         <Modal>
             <ModalHeader onClose={onClose}>
                 <h3>{language.dictionary.contact}</h3>
-                <p className="muted">Some text...</p>
+                <p className="muted">{language.dictionary.contactDescription}</p>
             </ModalHeader>
-            <Form>
-                <FormRow>
-                    <Button type="primary">Test</Button>
-                </FormRow>
-                <FormRow>
-                    <Button type="primary">Test</Button>
-                </FormRow>
-            </Form>
+            <ContactForm />
         </Modal>
     );
 }

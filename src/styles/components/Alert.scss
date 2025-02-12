@@ -1,0 +1,15 @@
+@use "../settings/colors.scss";
+
+.alert {
+    padding: 0.6rem 1rem;
+
+    &.alert-success {
+        background-color: rgba(colors.$success, 0.8);
+        color: #fff;
+    }
+
+    &.alert-error {
+        background-color: rgba(colors.$error, 0.9);
+        color: #fff;
+    }
+}

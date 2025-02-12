@@ -7,9 +7,19 @@ interface ILanguageDictionary {
 const dictionaryList: { [key: string]: ILanguageDictionary } = {
     EN: {
         // Text
-        heading: "My portfolio",
-        description: "Something...",
+        heading: "Danya Grachov",
+        description: "Software Developer & Student at Scalda",
         contact: "Contact",
+        aboutMe: "About me",
+        contactDescription: "Send me an email",
+        firstName: "Name",
+        lastName: "Surname",
+        email: "E-mail",
+        send: "Send",
+        message: "Message",
+        failedToSendMessage: "Failed to send message, please try again later",
+        messageSent: "Message was sent successfully",
+        emptyFields: "Empty fields",
 
         // Navigation
         home: "Home",
@@ -23,9 +33,19 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
 
     NL: {
         // Text
-        heading: "Mijn Portfolio",
-        description: "Iets...",
+        heading: "Danya Grachov",
+        description: "Software Developer & Student bij Scalda",
         contact: "Contact",
+        aboutMe: "Over mij",
+        contactDescription: "Stuur een e-mail aan mij",
+        firstName: "Voornaam",
+        lastName: "Achternaam",
+        email: "E-mail",
+        send: "Stuur",
+        message: "Uw bericht",
+        failedToSendMessage: "Het bericht kon niet worden verzonden, probeer het later opnieuw",
+        messageSent: "Het bericht is succesvol verzonden",
+        emptyFields: "Lege velden",
 
         // Navigation
         home: "Index",

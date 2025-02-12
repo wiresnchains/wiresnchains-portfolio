@@ -1,9 +1,10 @@
 import { ReactNode, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import "../styles/components/Nav.scss";
 import { useLanguage } from "../hooks/LanguageProvider";
 import { DropdownMenu, DropdownItem } from "./Dropdown";
+
+import "../styles/components/Nav.scss";
 
 export enum NavGroupSide {
     Left,
@@ -57,7 +58,7 @@ export function Navbar() {
         <Nav>
             <NavGroup side={NavGroupSide.Left}>
                 <NavItem>
-                    <h3>Portfolio</h3>
+                    <h3>{language.dictionary.heading}</h3>
                 </NavItem>
                 <NavItem>
                     <NavLink to="/">{language.dictionary.home}</NavLink>

@@ -12,15 +12,15 @@ export function Home() {
 
     return (
         <>
-            <Navbar />
             <Hero>
                 <h1>{language.dictionary.heading}</h1>
                 <p>{language.dictionary.description}</p>
-                <Inline>
+                <Inline center>
                     <Button type="primary" onClick={() => setShowContact(true)}>{language.dictionary.contact}</Button>
-                    <Button type="secondary">About me</Button>
+                    <Button type="secondary">{language.dictionary.aboutMe}</Button>
                 </Inline>
             </Hero>
+            <Navbar />
             {showContact && <ContactModal onClose={() => setShowContact(false)} />}
         </>
     );

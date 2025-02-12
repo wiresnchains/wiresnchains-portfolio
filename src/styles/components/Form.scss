@@ -1,5 +1,6 @@
 @use "../settings/sizing.scss";
 @use "../settings/colors.scss";
+@use "../settings/timing.scss";
 
 @mixin hover($color) {
     &:hover {
@@ -14,14 +15,15 @@
     border-radius: sizing.$border-rounding;
     font-weight: 500;
     color: #fff;
+    transition: timing.$anim-time background;
 
     &.btn-primary {
-        background-color: colors.$primary;
+        background: colors.$primary;
         @include hover(colors.$primary-hover);
     }
 
     &.btn-secondary {
-        background-color: colors.$secondary;
+        background: colors.$secondary;
         @include hover(colors.$secondary-hover);
     }
 }
@@ -40,4 +42,22 @@
             width: 100%;
         }
     }
+}
+
+.textbox {
+    padding: 0.5rem 0.8rem;
+    border-radius: sizing.$border-rounding;
+    border: 1px solid colors.$border;
+    outline: 0.2rem solid transparent;
+    transition: timing.$anim-time outline-color;
+
+    &:focus {
+        outline-color: colors.$primary;
+    }
+}
+
+textarea.textbox {
+    resize: vertical;
+    min-height: 5rem;
+    max-height: 10rem;
 }

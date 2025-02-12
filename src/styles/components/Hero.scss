@@ -1,13 +1,30 @@
 @use "../settings/sizing.scss";
+@use "../settings/colors.scss";
+
+@keyframes scroll-jump {
+    0% {  
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -10%);
+    }
+    100% {  
+        transform: translate(-50%, 0);
+    }
+}
 
 .hero {
-    height: 300px;
+    height: 100svh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     .hero-content {
+        text-align: center;
+        max-width: 25%;
+
         * {
             margin-bottom: sizing.$item-spacing;
             
@@ -15,5 +32,14 @@
                 margin-bottom: none;
             }
         }
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        left: 50%;
+        bottom: 1rem;
+        font-size: 2rem;
+        animation: scroll-jump 2s infinite;
+        cursor: pointer;
     }
 }

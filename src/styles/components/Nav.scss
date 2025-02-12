@@ -1,11 +1,15 @@
 @use "../settings/colors.scss";
 
 .nav {
-    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100svw;
     display: flex;
     align-items: center;
     padding: 0.8rem 2rem;
     gap: 2rem;
+    background: colors.$body;
     border: 1px solid colors.$border;
 
     .nav-group {
