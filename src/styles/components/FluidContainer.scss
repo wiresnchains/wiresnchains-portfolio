@@ -1,0 +1,12 @@
+.fluid-container {
+    display: flex;
+
+    &.center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .content {
+        max-width: 50%;
+    }
+}
