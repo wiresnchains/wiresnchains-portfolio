@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { useLanguage } from "../hooks/LanguageProvider";
 import { Navbar } from "../components/Nav";
-import { Hero } from "../components/Hero";
+import { Hero, ScrollIndicator } from "../components/Hero";
 import { Inline } from "../components/Inline";
 import { Button, ContactForm } from "../components/Form";
-import { useState } from "react";
 import { ContactModal } from "../components/Modal";
 import { Block } from "../components/Block";
 import { FluidContainer } from "../components/FluidContainer";
@@ -21,6 +21,7 @@ export function Home() {
                     <Button type="primary" onClick={() => setShowContact(true)}>{language.dictionary.contact}</Button>
                     <Button type="secondary">{language.dictionary.aboutMe}</Button>
                 </Inline>
+                <ScrollIndicator />
             </Hero>
 
             <Block>
