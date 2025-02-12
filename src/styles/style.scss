@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: fonts.$font-family;
+    font-family: fonts.$body;
 }
 
 body {
@@ -25,6 +25,10 @@ button {
 button, input, textarea, label {
     font-size: 1rem;
     display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: fonts.$headings;
 }
 
 h1 {
