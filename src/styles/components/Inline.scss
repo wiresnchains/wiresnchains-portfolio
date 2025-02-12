@@ -3,6 +3,7 @@
 .inline {
     display: flex;
     gap: sizing.$item-spacing;
+    flex-wrap: wrap;
 
     &.center {
         justify-content: center;

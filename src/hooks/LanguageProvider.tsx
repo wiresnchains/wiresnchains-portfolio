@@ -21,6 +21,9 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         messageSent: "Message was sent successfully",
         emptyFields: "Empty fields",
         projects: "Projects",
+        desktopDev: "Desktop/Game Development",
+        webDev: "Web Development",
+        tools: "Tools",
 
         // Navigation
         home: "Home",
@@ -48,6 +51,9 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         messageSent: "Het bericht is succesvol verzonden",
         emptyFields: "Lege velden",
         projects: "Projecten",
+        desktopDev: "Desktop Applicaties/Game Ontwikkeling",
+        webDev: "Web Ontwikkeling",
+        tools: "Hulpmiddelen",
 
         // Navigation
         home: "Index",

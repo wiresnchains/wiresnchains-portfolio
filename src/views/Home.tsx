@@ -7,6 +7,7 @@ import { Button, ContactForm } from "../components/Form";
 import { ContactModal } from "../components/Modal";
 import { Block } from "../components/Block";
 import { FluidContainer } from "../components/FluidContainer";
+import { Tag } from "../components/Tag";
 
 export function Home() {
     const language = useLanguage();
@@ -30,8 +31,27 @@ export function Home() {
             </Block>
 
             <Block>
-                <h2>{language.dictionary.projects}</h2>
-                <p className="muted">Lorem ipsum dolor sit amet</p>
+                <h2>{language.dictionary.experience}</h2>
+                <h3>{language.dictionary.desktopDev}</h3>
+                <Inline center>
+                    <Tag>C++</Tag>
+                    <Tag>C#</Tag>
+                    <Tag>Lua/Luau</Tag>
+                </Inline>
+                <h3>{language.dictionary.webDev}</h3>
+                <Inline center>
+                    <Tag>NodeJS</Tag>
+                    <Tag>React</Tag>
+                    <Tag>SCSS</Tag>
+                    <Tag>TypeScript</Tag>
+                    <Tag>PHP</Tag>
+                    <Tag>SQL (MySQL/PostgresSQL)</Tag>
+                </Inline>
+                <h3>{language.dictionary.tools}</h3>
+                <Inline center>
+                    <Tag>Docker</Tag>
+                    <Tag>Git</Tag>
+                </Inline>
             </Block>
 
             <Block>

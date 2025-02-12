@@ -7,4 +7,10 @@
     h1, h2, h3, h4, h5, h6 {
         margin-bottom: sizing.$item-spacing;
     }
+
+    // TODO: Fix this abomination (why did I put it here?)
+    .inline {
+        margin-bottom: sizing.$item-spacing;
+        &:last-child { margin-bottom: 0; }
+    }
 }
