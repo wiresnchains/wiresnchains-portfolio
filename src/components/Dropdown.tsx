@@ -22,9 +22,9 @@ function DropdownList({ children }: { children: ReactNode }) {
     );
 }
 
-export function DropdownItem({ children }: { children: ReactNode }) {
+export function DropdownItem({ active, children }: { active?: boolean, children: ReactNode }) {
     return (
-        <li className="dropdown-item">
+        <li className={"dropdown-item" + (active ? " active" : "")}>
             {children}
         </li>
     );

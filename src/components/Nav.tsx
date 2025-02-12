@@ -65,14 +65,12 @@ export function Navbar() {
                 <NavItem>
                     <NavLink to="/experience">{language.dictionary.experience}</NavLink>
                 </NavItem>
-            </NavGroup>
-            <NavGroup side={NavGroupSide.Right}>
                 <NavItem>
                     <DropdownMenu title={language.dictionary.language}>
-                        <DropdownItem>
+                        <DropdownItem active={language.userLanguage === "EN"}>
                             <button onClick={() => language.setUserLanguage("EN")}>{language.dictionary.english}</button>
                         </DropdownItem>
-                        <DropdownItem>
+                        <DropdownItem active={language.userLanguage === "NL"}>
                             <button onClick={() => language.setUserLanguage("NL")}>{language.dictionary.dutch}</button>
                         </DropdownItem>
                     </DropdownMenu>

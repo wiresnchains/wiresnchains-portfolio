@@ -1,4 +1,6 @@
 @use "../settings/sizing.scss";
+@use "../settings/colors.scss";
+@use "../settings/timing.scss";
 
 .dropdown-menu {
     position: relative;
@@ -27,9 +29,29 @@
         top: 100%;
         left: 0;
         list-style: none;
+        background: colors.$body;
+        min-width: 100%;
+        border: 1px solid colors.$border;
 
         .dropdown-item {
+            button {
+                border: none;
+                outline: none;
+                background: transparent;
+                min-width: 100%;
+                text-align: left;
+                transition: timing.$anim-time background;
+                padding: 0.2rem 1rem;
+                font-size: 0.8rem;
 
+                &:hover {
+                    background: colors.$secondary;
+                }
+            }
+
+            &.active button {
+                background: colors.$secondary;
+            }
         }
     }
 
