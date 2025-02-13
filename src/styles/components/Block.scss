@@ -8,9 +8,9 @@
         margin-bottom: sizing.$item-spacing;
     }
 
-    // TODO: Fix this abomination (why did I put it here?)
-    .inline {
-        margin-bottom: sizing.$item-spacing;
-        &:last-child { margin-bottom: 0; }
+    .limit-width {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        max-width: 50%;
     }
 }

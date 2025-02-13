@@ -2,6 +2,7 @@
 
 .alert {
     padding: 0.6rem 1rem;
+    text-align: left;
 
     &.alert-success {
         background: rgba(colors.$success, 0.8);

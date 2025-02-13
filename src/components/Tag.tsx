@@ -2,8 +2,11 @@ import { ReactNode } from "react";
 
 import "../styles/components/Tag.scss";
 
-export function Tag({ children }: { children: ReactNode }) {
+export function Tag({ label, children }: { label: string, children: ReactNode }) {
     return (
-        <span className="tag">{children}</span>
+        <span className="tag">
+            <span className="label">{label}</span>
+            {children}
+        </span>
     );
 }

@@ -5,7 +5,7 @@ import { Hero, ScrollIndicator } from "../components/Hero";
 import { Inline } from "../components/Inline";
 import { Button, ContactForm } from "../components/Form";
 import { ContactModal } from "../components/Modal";
-import { Block } from "../components/Block";
+import { Block, LimitWidth } from "../components/Block";
 import { FluidContainer } from "../components/FluidContainer";
 import { Tag } from "../components/Tag";
 import { Footer } from "../components/Footer";
@@ -21,38 +21,35 @@ export function Home() {
                 <p>{language.dictionary.description}</p>
                 <Inline center>
                     <Button type="primary" onClick={() => setShowContact(true)}>{language.dictionary.contact}</Button>
-                    <Button type="secondary">{language.dictionary.aboutMe}</Button>
+                    <Button type="secondary" onClick={() => { document.getElementById("about-me")?.scrollIntoView({ behavior: "smooth" }) }}>{language.dictionary.aboutMe}</Button>
                 </Inline>
-                <ScrollIndicator />
+                <ScrollIndicator onClick={() => { document.getElementById("about-me")?.scrollIntoView({ behavior: "smooth" }) }} />
             </Hero>
 
-            <Block>
+            <Block id="about-me">
                 <h2>{language.dictionary.aboutMe}</h2>
-                <p className="muted">Lorem ipsum dolor sit amet</p>
+                <LimitWidth>
+                    <p className="muted">{language.dictionary.aboutMeText}</p>
+                </LimitWidth>
             </Block>
 
             <Block>
                 <h2>{language.dictionary.experience}</h2>
-                <h3>{language.dictionary.desktopDev}</h3>
-                <Inline center>
-                    <Tag>C++</Tag>
-                    <Tag>C#</Tag>
-                    <Tag>Lua/Luau</Tag>
-                </Inline>
-                <h3>{language.dictionary.webDev}</h3>
-                <Inline center>
-                    <Tag>NodeJS</Tag>
-                    <Tag>React</Tag>
-                    <Tag>SCSS</Tag>
-                    <Tag>TypeScript</Tag>
-                    <Tag>PHP</Tag>
-                    <Tag>SQL (MySQL/PostgresSQL)</Tag>
-                </Inline>
-                <h3>{language.dictionary.tools}</h3>
-                <Inline center>
-                    <Tag>Docker</Tag>
-                    <Tag>Git</Tag>
-                </Inline>
+                <LimitWidth>
+                    <Inline center>
+                        <Tag label={language.dictionary.desktopDev}>C++</Tag>
+                        <Tag label={language.dictionary.desktopDev}>C#</Tag>
+                        <Tag label={language.dictionary.gameDev}>Lua/Luau</Tag>
+                        <Tag label={language.dictionary.webDev}>NodeJS</Tag>
+                        <Tag label={language.dictionary.webDev}>React</Tag>
+                        <Tag label={language.dictionary.webDev}>SCSS</Tag>
+                        <Tag label={language.dictionary.webDev}>TypeScript</Tag>
+                        <Tag label={language.dictionary.webDev}>PHP</Tag>
+                        <Tag label={language.dictionary.backendDev}>SQL (MySQL/PostgresSQL)</Tag>
+                        <Tag label={language.dictionary.prodEnv}>Docker</Tag>
+                        <Tag label={language.dictionary.vcs}>Git</Tag>
+                    </Inline>
+                </LimitWidth>
             </Block>
 
             <Block>

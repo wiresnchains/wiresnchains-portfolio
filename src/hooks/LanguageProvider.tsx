@@ -4,6 +4,20 @@ interface ILanguageDictionary {
     [key: string]: string;
 }
 
+function calculateYearsFrom(dateString: string) {
+    const startDate = new Date(dateString);
+    const currentDate = new Date();
+
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    const monthDifference = currentDate.getMonth() - startDate.getMonth();
+
+    if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < startDate.getDate())) {
+        years--;
+    }
+
+    return years;
+}
+
 const dictionaryList: { [key: string]: ILanguageDictionary } = {
     EN: {
         // Text
@@ -21,10 +35,14 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         messageSent: "Message was sent successfully",
         emptyFields: "Empty fields",
         projects: "Projects",
-        desktopDev: "Desktop/Game Development",
-        webDev: "Web Development",
-        tools: "Tools",
         otherLinks: "Other links",
+        desktopDev: "Desktop/Game Development",
+        gameDev: "Game Development",
+        webDev: "Web Development",
+        backendDev: "Backend Development",
+        prodEnv: "Production Environment",
+        vcs: "Version Control",
+        aboutMeText: `I am ${calculateYearsFrom("2007-08-13")} years old`,
 
         // Navigation
         home: "Home",
@@ -52,10 +70,14 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         messageSent: "Het bericht is succesvol verzonden",
         emptyFields: "Lege velden",
         projects: "Projecten",
-        desktopDev: "Desktop Applicaties/Game Ontwikkeling",
-        webDev: "Web Ontwikkeling",
-        tools: "Hulpmiddelen",
         otherLinks: "Andere linken",
+        desktopDev: "Desktop/Game Ontwikkeling",
+        gameDev: "Game Ontwikkeling",
+        webDev: "Web Ontwikkeling",
+        backendDev: "Backend Ontwikkeling",
+        prodEnv: "Production Omgeving",
+        vcs: "Versie Control",
+        aboutMeText: `Ik ben ${calculateYearsFrom("2007-08-13")} jaar oud`,
 
         // Navigation
         home: "Index",

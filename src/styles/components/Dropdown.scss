@@ -43,6 +43,7 @@
                 transition: timing.$anim-time background;
                 padding: 0.2rem 1rem;
                 font-size: 0.8rem;
+                color: colors.$text;
 
                 &:hover {
                     background: colors.$secondary;
