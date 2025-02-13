@@ -12,5 +12,10 @@
         margin-left: 50%;
         transform: translateX(-50%);
         max-width: 50%;
+        
+        @media only screen and (max-width: sizing.$mobile-width-threshold) {
+            max-width: 100%;
+            width: calc(100% - sizing.$item-spacing);
+        }
     }
 }
