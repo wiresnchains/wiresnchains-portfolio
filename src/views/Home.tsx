@@ -64,7 +64,7 @@ export function Home() {
             
             <Footer />
 
-            <Navbar />
+            <Navbar fixed />
             {showContact && <ContactModal onClose={() => setShowContact(false)} />}
         </>
     );

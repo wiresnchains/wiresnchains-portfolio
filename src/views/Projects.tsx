@@ -8,14 +8,11 @@ export function Projects() {
 
     return (
         <>
-            <Block>
-                <h1>Hello, world!</h1>
-            </Block>
+            <Navbar alwaysScrolled />
             <Block>
                 <h1>{language.dictionary.projects}</h1>
             </Block>
             <Footer />
-            <Navbar alwaysScrolled />
         </>
     );
 }

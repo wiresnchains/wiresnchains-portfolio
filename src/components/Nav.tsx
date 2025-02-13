@@ -43,31 +43,33 @@ export function NavItem({ children }: { children: ReactNode }) {
     );
 }
 
-export function Nav({ alwaysScrolled, children }: { alwaysScrolled?: boolean, children: ReactNode }) {
+export function Nav({ alwaysScrolled, fixed, children }: { alwaysScrolled?: boolean, fixed?: boolean, children: ReactNode }) {
     const [scrolled, setScrolled] = useState(false);
 
-    if (!alwaysScrolled) {
-        window.addEventListener("scroll", () => {
-            setScrolled(window.scrollY > 1);
-        });
-    }
-    else {
-        if (!scrolled)
-            setScrolled(true);
-    }
+    window.addEventListener("scroll", () => {
+        setScrolled(window.scrollY > 1);
+    });
+
+    let className = "nav";
+
+    if (alwaysScrolled)
+        className += " show-background";
+
+    if (fixed)
+        className += " fixed";
 
     return (
-        <nav className={scrolled ? "nav show-background" : "nav"}>
+        <nav className={scrolled ? className + " show-background" : className}>
             {children}
         </nav>
     );
 }
 
-export function Navbar({ alwaysScrolled }: { alwaysScrolled?: boolean }) {
+export function Navbar({ alwaysScrolled, fixed }: { alwaysScrolled?: boolean, fixed?: boolean }) {
     const language = useLanguage();
     
     return (
-        <Nav alwaysScrolled={alwaysScrolled}>
+        <Nav alwaysScrolled={alwaysScrolled} fixed={fixed}>
             <NavGroup side={NavGroupSide.Left}>
                 <NavItem>
                     <h3>{language.dictionary.heading}</h3>
