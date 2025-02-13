@@ -18,6 +18,14 @@
         align-items: center;
         list-style: none;
 
+        @media only screen and (max-width: sizing.$mobile-width-threshold) {
+            margin-bottom: sizing.$item-spacing;
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
         .footer-item {
             font-size: 0.9rem;
             width: 100%;
