@@ -1,12 +1,16 @@
 @use "../settings/colors.scss";
+@use "../settings/sizing.scss";
 
 .footer {
     background: colors.$text;
     color: colors.$body;
     padding: 3rem 15%;
     width: 100%;
-    display: flex;
-    gap: 10rem;
+
+    @media only screen and (min-width: sizing.$mobile-width-threshold) {
+        display: flex;
+        gap: 10rem;
+    }
 
     .footer-group {
         display: flex;
