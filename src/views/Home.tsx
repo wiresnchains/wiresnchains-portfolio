@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLanguage } from "../hooks/LanguageProvider";
 import { Navbar } from "../components/Nav";
 import { Hero, ScrollIndicator } from "../components/Hero";
@@ -16,6 +17,9 @@ export function Home() {
 
     return (
         <>
+            <Helmet>
+                <title>{language.dictionary.heading} - {language.dictionary.home}</title>
+            </Helmet>
             <Hero>
                 <h1>{language.dictionary.heading}</h1>
                 <p>{language.dictionary.description}</p>
