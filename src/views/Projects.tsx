@@ -26,22 +26,22 @@ export function Projects() {
                 <Timeline>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h1>FinalForum</h1>
+                            <h2>FinalForum</h2>
                             <p className="muted small">2020</p>
                         </TimelineBlock>
 
                         <TimelineBlock>
-                            <p>A forum engine with registration, posts, categories, automatic database setup and admin panel</p>
+                            <p>{language.dictionary.finalforumDesc}</p>
                             <NavLink to="https://github.com/wiresnchains/finalforum" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h1>Endless Mines</h1>
+                            <h2>Endless Mines</h2>
                             <p className="muted small">2023</p>
                         </TimelineBlock>
                         <TimelineBlock>
-                            <p>An RPG game on Roblox with multiple progression paths</p>
+                            <p>{language.dictionary.emDesc}</p>
                             <NavLink to="#" target="_blank">Link</NavLink>
                         </TimelineBlock>
                         <TimelineBlock>
@@ -55,44 +55,38 @@ export function Projects() {
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h1>Wave.js</h1>
+                            <h2>Wave.js</h2>
                             <p className="muted small">2024</p>
                         </TimelineBlock>
                         <TimelineBlock>
-                            <p>A JavaScript library for front-end development with a state manager</p>
+                            <p>{language.dictionary.waveDesc}</p>
                             <NavLink to="https://github.com/wiresnchains/wave" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
-                        <h1>Aurora</h1>
+                        <h2>Aurora</h2>
                         <p className="muted small">2024</p>
-                        <p>An RPG game server in GTA 5 Multiplayer using NodeJS + TypeScript (and wave.js for frontend)</p>
+                        <p>{language.dictionary.auroraDesc}</p>
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h1>Fusion Engine</h1>
+                            <h2>Fusion Engine</h2>
                             <p className="muted small">2024</p>
                         </TimelineBlock>
                         <TimelineBlock>
-                            <p>A C++ Game engine for 2D/3D rendering using SDL2 + OpenGL</p>
+                            <p>{language.dictionary.fusionDesc}</p>
                             <NavLink to="https://github.com/wiresnchains/fusion" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h1>V9</h1>
+                            <h2>V9</h2>
                             <p className="muted small">2024</p>
                         </TimelineBlock>
                         <TimelineBlock>
-                            <p>My own interpreted scripting language designed for static & strict typing</p>
+                            <p>{language.dictionary.v9desc}</p>
                             <NavLink to="https://github.com/wiresnchains/v9" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
-                    </TimelineEvent>
-                    <TimelineEvent>
-                        <h1>wiresnchains</h1>
-                        <p className="muted small">2025</p>
-                        <p>My personal website using React for frontend and Express + MySQL for backend</p>
-                        <NavLink to="https://wiresnchains.com/" target="_blank">Website</NavLink>
                     </TimelineEvent>
                 </Timeline>
             </Block>

@@ -43,6 +43,12 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         prodEnv: "Production Environment",
         vcs: "Version Control",
         aboutMeText: `I am ${calculateYearsFrom("2007-08-13")} years old`,
+        finalforumDesc: "A forum engine with registration, posts, categories, automatic database setup and admin panel",
+        emDesc: "An RPG game on Roblox with multiple progression paths",
+        waveDesc: "A JavaScript library for front-end development with a state manager",
+        auroraDesc: "An RPG game server in GTA 5 Multiplayer using NodeJS + TypeScript (and wave.js for frontend)",
+        fusionDesc: "A C++ Game engine for 2D/3D rendering using SDL2 + OpenGL",
+        v9desc: "My own interpreted scripting language designed for static & strict typing",
 
         // Navigation
         home: "Home",
@@ -78,6 +84,12 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         prodEnv: "Production Omgeving",
         vcs: "Versie Control",
         aboutMeText: `Ik ben ${calculateYearsFrom("2007-08-13")} jaar oud`,
+        finalforumDesc: "Een forumengine met registratie, berichten, categorieën, automatische databaseconfiguratie en een beheerderspaneel",
+        emDesc: "Een RPG-spel op Roblox met meerdere progressiepaden",
+        waveDesc: "Een JavaScript-bibliotheek voor front-end ontwikkeling met een toestandsbeheerder",
+        auroraDesc: "Een RPG-gameserver in GTA 5 Multiplayer met NodeJS + TypeScript (en wave.js voor de frontend)",
+        fusionDesc: "Een C++ game engine voor 2D/3D-rendering met SDL2 + OpenGL",
+        v9desc: "Mijn eigen geïnterpreteerde scripttaal, ontworpen voor statische en strikte types",
 
         // Navigation
         home: "Index",
