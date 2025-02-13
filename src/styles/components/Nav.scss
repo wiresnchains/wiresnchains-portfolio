@@ -37,6 +37,8 @@
             }
 
             a {
+                text-decoration: none;
+                
                 &.active {
                     color: colors.$link;
                 }

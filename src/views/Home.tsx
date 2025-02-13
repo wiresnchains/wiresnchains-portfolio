@@ -6,7 +6,7 @@ import { Hero, ScrollIndicator } from "../components/Hero";
 import { Inline } from "../components/Inline";
 import { Button, ContactForm } from "../components/Form";
 import { ContactModal } from "../components/Modal";
-import { Block, LimitWidth } from "../components/Block";
+import { Block, BlockTitle, LimitWidth } from "../components/Block";
 import { FluidContainer } from "../components/FluidContainer";
 import { Tag } from "../components/Tag";
 import { Footer } from "../components/Footer";
@@ -31,14 +31,14 @@ export function Home() {
             </Hero>
 
             <Block id="about-me">
-                <h2>{language.dictionary.aboutMe}</h2>
+                <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
                 <LimitWidth>
                     <p className="muted">{language.dictionary.aboutMeText}</p>
                 </LimitWidth>
             </Block>
 
             <Block>
-                <h2>{language.dictionary.experience}</h2>
+                <BlockTitle>{language.dictionary.experience}</BlockTitle>
                 <LimitWidth>
                     <Inline center>
                         <Tag label={language.dictionary.desktopDev}>C++</Tag>
@@ -57,7 +57,7 @@ export function Home() {
             </Block>
 
             <Block>
-                <h2>{language.dictionary.contact}</h2>
+                <BlockTitle>{language.dictionary.contact}</BlockTitle>
                 <FluidContainer center>
                     <ContactForm />
                 </FluidContainer>

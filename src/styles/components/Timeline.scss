@@ -1,0 +1,62 @@
+@use "../settings/colors.scss";
+@use "../settings/sizing.scss";
+@use "sass:math";
+
+.timeline {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+
+    .timeline-event {
+        position: relative;
+        width: 100%;
+
+        .timeline-container {
+            padding: sizing.$item-spacing;
+            margin-left: calc(3rem + sizing.$item-spacing);
+            text-align: left;
+
+            .timeline-block {
+                margin-bottom: sizing.$item-spacing;
+                &:last-child { margin-bottom: 0; }
+            }
+
+            img {
+                max-height: 14rem;
+            }
+        }
+
+        $pin-size: 3rem;
+        $line-width: 0.8rem;
+
+        .time-pin {
+            position: absolute;
+            top: 0;
+            height: $pin-size;
+            width: $pin-size;
+            border-radius: $pin-size;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: colors.$accent;
+            color: #fff;
+        }
+
+        .time-line {
+            position: absolute;
+            top: 0;
+            left: math.div($pin-size, 2);
+            transform: translateX(-50%);
+            width: $line-width;
+            height: 100%;
+            background: colors.$accent;
+        }
+
+        &:last-child {
+            .time-line {
+                border-bottom-left-radius: $line-width;
+                border-bottom-right-radius: $line-width;
+            }
+        }
+    }
+}

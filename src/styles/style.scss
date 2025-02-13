@@ -62,7 +62,6 @@ label {
 a {
     color: colors.$link;
     transition: timing.$anim-time color;
-    text-decoration: none;
 
     &:hover {
         color: colors.$link-hover;
@@ -71,4 +70,8 @@ a {
 
 .muted {
     color: rgb(colors.$text, 0.5);
+}
+
+.small {
+    font-size: 0.8rem;
 }
