@@ -30,7 +30,7 @@ export function Footer() {
                     <h4>{language.dictionary.otherLinks}</h4>
                 </FooterItem>
                 <FooterItem>
-                    <NavLink to="https://github.com/wiresnchains/">GitHub</NavLink>
+                    <NavLink to="https://github.com/wiresnchains/" target="_blank">GitHub</NavLink>
                 </FooterItem>
             </FooterGroup>
             <FooterGroup>
