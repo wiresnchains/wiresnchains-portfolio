@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import { MutableRefObject, ReactNode } from "react";
 
 import "../styles/components/Block.scss";
 
-export function Block({ id, children }: { id?: string, children: ReactNode }) {
+export function Block({ refHook, children }: { refHook?: MutableRefObject<HTMLElement | null>, children: ReactNode }) {
     return (
-        <section className="block" id={id}>
+        <section className="block" ref={refHook}>
             {children}
         </section>
     );

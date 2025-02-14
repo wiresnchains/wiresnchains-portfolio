@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLanguage } from "../hooks/LanguageProvider";
 import { Navbar } from "../components/Nav";
@@ -13,6 +13,7 @@ import { Footer } from "../components/Footer";
 
 export function Home() {
     const language = useLanguage();
+    const aboutMeBlock = useRef<HTMLElement | null>(null);
     const [showContact, setShowContact] = useState(false);
 
     return (
@@ -25,12 +26,12 @@ export function Home() {
                 <p>{language.dictionary.description}</p>
                 <Inline center>
                     <Button type="primary" onClick={() => setShowContact(true)}>{language.dictionary.contact}</Button>
-                    <Button type="secondary" onClick={() => { document.getElementById("about-me")?.scrollIntoView({ behavior: "smooth" }) }}>{language.dictionary.aboutMe}</Button>
+                    <Button type="secondary" onClick={() => { aboutMeBlock.current?.scrollIntoView({ behavior: "smooth" }) }}>{language.dictionary.aboutMe}</Button>
                 </Inline>
-                <ScrollIndicator onClick={() => { document.getElementById("about-me")?.scrollIntoView({ behavior: "smooth" }) }} />
+                <ScrollIndicator onClick={() => { aboutMeBlock.current?.scrollIntoView({ behavior: "smooth" }) }} />
             </Hero>
 
-            <Block id="about-me">
+            <Block refHook={aboutMeBlock}>
                 <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
                 <LimitWidth>
                     <p className="muted">{language.dictionary.aboutMeText}</p>
