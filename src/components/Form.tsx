@@ -42,8 +42,7 @@ export function Textarea({ id, placeholder, onChange }: { id?: string, placehold
 }
 
 export function ContactForm() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState<string | undefined>();
@@ -54,18 +53,15 @@ export function ContactForm() {
     return (
         <Form>
             <FormRow>
-                <Input id="contact-firstName" type="text" placeholder={language.dictionary.firstName} onChange={(e) => setFirstName(e.target.value)} />
-                <Input id="contact-lastName" type="text" placeholder={language.dictionary.lastName} onChange={(e) => setLastName(e.target.value)} />
+                <Input type="text" placeholder={language.dictionary.name} onChange={(e) => setName(e.target.value)} />
+                <Input type="email" placeholder={language.dictionary.email} onChange={(e) => setEmail(e.target.value)}  />
             </FormRow>
             <FormRow>
-                <Input id="contact-email" type="email" placeholder={language.dictionary.email} onChange={(e) => setEmail(e.target.value)}  />
-            </FormRow>
-            <FormRow>
-                <Textarea id="contact-text" placeholder={language.dictionary.message} onChange={(e) => setMessage(e.target.value)}  />
+                <Textarea placeholder={language.dictionary.message} onChange={(e) => setMessage(e.target.value)}  />
             </FormRow>
             <FormRow>
                 <Button type="primary" onClick={async () => {
-                    if (!firstName || !lastName || !email || !message) {
+                    if (!name || !email || !message) {
                         setError(language.dictionary.emptyFields);
                         return;
                     }
@@ -78,13 +74,8 @@ export function ContactForm() {
                                     timestamp: new Date().toISOString(),
                                     fields: [
                                         {
-                                            name: "First Name",
-                                            value: firstName,
-                                            inline: true
-                                        },
-                                        {
-                                            name: "Second Name",
-                                            value: lastName,
+                                            name: "Name",
+                                            value: name,
                                             inline: true
                                         },
                                         {
