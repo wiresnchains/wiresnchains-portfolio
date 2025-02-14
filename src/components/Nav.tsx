@@ -83,10 +83,10 @@ export function Navbar({ alwaysScrolled, fixed }: { alwaysScrolled?: boolean, fi
                 <NavItem>
                     <DropdownMenu title={language.dictionary.language}>
                         <DropdownItem active={language.userLanguage === "EN"}>
-                            <button onClick={() => language.setUserLanguage("EN")}>{language.dictionary.english}</button>
+                            <button onClick={() => language.setUserLanguage("EN")}>English</button>
                         </DropdownItem>
                         <DropdownItem active={language.userLanguage === "NL"}>
-                            <button onClick={() => language.setUserLanguage("NL")}>{language.dictionary.dutch}</button>
+                            <button onClick={() => language.setUserLanguage("NL")}>Nederlands</button>
                         </DropdownItem>
                     </DropdownMenu>
                 </NavItem>
