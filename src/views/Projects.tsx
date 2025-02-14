@@ -29,13 +29,37 @@ export function Projects() {
                 <Timeline>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h2>FinalForum</h2>
-                            <p className="muted small">2020</p>
+                            <h2>V9</h2>
+                            <p className="muted small">2024</p>
                         </TimelineBlock>
-
                         <TimelineBlock>
-                            <p>{language.dictionary.finalforumDesc}</p>
-                            <NavLink to="https://github.com/wiresnchains/finalforum" target="_blank">GitHub</NavLink>
+                            <p>{language.dictionary.v9desc}</p>
+                            <NavLink to="https://github.com/wiresnchains/v9" target="_blank">GitHub</NavLink>
+                        </TimelineBlock>
+                    </TimelineEvent>
+                    <TimelineEvent>
+                        <TimelineBlock>
+                            <h2>Fusion Engine</h2>
+                            <p className="muted small">2024</p>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <p>{language.dictionary.fusionDesc}</p>
+                            <NavLink to="https://github.com/wiresnchains/fusion" target="_blank">GitHub</NavLink>
+                        </TimelineBlock>
+                    </TimelineEvent>
+                    <TimelineEvent>
+                        <h2>Aurora</h2>
+                        <p className="muted small">2024</p>
+                        <p>{language.dictionary.auroraDesc}</p>
+                    </TimelineEvent>
+                    <TimelineEvent>
+                        <TimelineBlock>
+                            <h2>Wave.js</h2>
+                            <p className="muted small">2024</p>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <p>{language.dictionary.waveDesc}</p>
+                            <NavLink to="https://github.com/wiresnchains/wave" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
@@ -68,37 +92,13 @@ export function Projects() {
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
-                            <h2>Wave.js</h2>
-                            <p className="muted small">2024</p>
+                            <h2>FinalForum</h2>
+                            <p className="muted small">2020</p>
                         </TimelineBlock>
+
                         <TimelineBlock>
-                            <p>{language.dictionary.waveDesc}</p>
-                            <NavLink to="https://github.com/wiresnchains/wave" target="_blank">GitHub</NavLink>
-                        </TimelineBlock>
-                    </TimelineEvent>
-                    <TimelineEvent>
-                        <h2>Aurora</h2>
-                        <p className="muted small">2024</p>
-                        <p>{language.dictionary.auroraDesc}</p>
-                    </TimelineEvent>
-                    <TimelineEvent>
-                        <TimelineBlock>
-                            <h2>Fusion Engine</h2>
-                            <p className="muted small">2024</p>
-                        </TimelineBlock>
-                        <TimelineBlock>
-                            <p>{language.dictionary.fusionDesc}</p>
-                            <NavLink to="https://github.com/wiresnchains/fusion" target="_blank">GitHub</NavLink>
-                        </TimelineBlock>
-                    </TimelineEvent>
-                    <TimelineEvent>
-                        <TimelineBlock>
-                            <h2>V9</h2>
-                            <p className="muted small">2024</p>
-                        </TimelineBlock>
-                        <TimelineBlock>
-                            <p>{language.dictionary.v9desc}</p>
-                            <NavLink to="https://github.com/wiresnchains/v9" target="_blank">GitHub</NavLink>
+                            <p>{language.dictionary.finalforumDesc}</p>
+                            <NavLink to="https://github.com/wiresnchains/finalforum" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
                     </TimelineEvent>
                 </Timeline>
