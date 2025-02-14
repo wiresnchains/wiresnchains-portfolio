@@ -26,8 +26,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         contact: "Contact",
         aboutMe: "About me",
         contactDescription: "Send me an email",
-        firstName: "Name",
-        lastName: "Surname",
+        name: "Name",
         email: "E-mail",
         send: "Send",
         message: "Message",
@@ -55,9 +54,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         experience: "Experience",
 
         // Languages
-        language: "Language",
-        english: "English",
-        dutch: "Dutch"
+        language: "Language"
     },
 
     NL: {
@@ -67,8 +64,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         contact: "Contact",
         aboutMe: "Over mij",
         contactDescription: "Stuur een e-mail aan mij",
-        firstName: "Voornaam",
-        lastName: "Achternaam",
+        name: "Naam",
         email: "E-mail",
         send: "Stuur",
         message: "Uw bericht",
@@ -96,9 +92,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         experience: "Ervaring",
 
         // Languages
-        language: "Taal",
-        english: "Engels",
-        dutch: "Nederlands"
+        language: "Taal"
     }
 }
 
