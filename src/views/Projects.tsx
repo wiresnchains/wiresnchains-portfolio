@@ -1,11 +1,14 @@
 import { Helmet } from "react-helmet";
+import { NavLink } from "react-router-dom";
+
 import { Block, BlockTitle } from "../components/Block";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Nav";
-import { useLanguage } from "../hooks/LanguageProvider";
 import { Timeline, TimelineBlock, TimelineEvent } from "../components/Timeline";
-import { NavLink } from "react-router-dom";
 import { Inline } from "../components/Inline";
+import Fancybox from "../components/Fancybox";
+
+import { useLanguage } from "../hooks/LanguageProvider";
 
 import gameScreenshot01 from "../assets/images/01.webp";
 import gameScreenshot02 from "../assets/images/02.webp";
@@ -45,12 +48,22 @@ export function Projects() {
                             <NavLink to="#" target="_blank">Link</NavLink>
                         </TimelineBlock>
                         <TimelineBlock>
-                            <Inline>
-                                <img src={gameScreenshot01} alt="game-screenshot-01" />
-                                <img src={gameScreenshot02} alt="game-screenshot-02" />
-                                <img src={gameScreenshot03} alt="game-screenshot-03" />
-                                <img src={gameScreenshot04} alt="game-screenshot-04" />
-                            </Inline>
+                            <Fancybox>
+                                <Inline>
+                                    <a data-fancybox="gallery" href={gameScreenshot01}>
+                                        <img src={gameScreenshot01} alt="game-screenshot-01" />
+                                    </a>
+                                    <a data-fancybox="gallery" href={gameScreenshot02}>
+                                        <img src={gameScreenshot02} alt="game-screenshot-02" />
+                                    </a>
+                                    <a data-fancybox="gallery" href={gameScreenshot03}>
+                                        <img src={gameScreenshot03} alt="game-screenshot-03" />
+                                    </a>
+                                    <a data-fancybox="gallery" href={gameScreenshot04}>
+                                        <img src={gameScreenshot04} alt="game-screenshot-04" />
+                                    </a>
+                                </Inline>
+                            </Fancybox>
                         </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
