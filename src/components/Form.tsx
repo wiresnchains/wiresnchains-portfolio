@@ -29,16 +29,16 @@ export function Button({ type, onClick, children }: { type: "primary" | "seconda
     );
 }
 
-export function Input({ id, type, placeholder, onChange }: { id?: string, type?: HTMLInputTypeAttribute, placeholder?: string, onChange?: ChangeEventHandler<HTMLInputElement> }) {
+export function Input({ id, type, placeholder, value, onChange }: { id?: string, type?: HTMLInputTypeAttribute, placeholder?: string, value?: string | number, onChange?: ChangeEventHandler<HTMLInputElement> }) {
     return (
-        <input className="textbox" id={id} type={type} placeholder={placeholder} onChange={onChange} />
-    )
+        <input className="textbox" id={id} type={type} placeholder={placeholder} value={value} onChange={onChange} />
+    );
 }
 
-export function Textarea({ id, placeholder, onChange }: { id?: string, placeholder?: string, onChange?: ChangeEventHandler<HTMLTextAreaElement>  }) {
+export function Textarea({ id, placeholder, value, onChange }: { id?: string, placeholder?: string, value?: string | number, onChange?: ChangeEventHandler<HTMLTextAreaElement>  }) {
     return (
-        <textarea className="textbox" id={id} placeholder={placeholder} onChange={onChange} />
-    )
+        <textarea className="textbox" id={id} placeholder={placeholder} value={value} onChange={onChange} />
+    );
 }
 
 export function ContactForm() {
@@ -53,11 +53,11 @@ export function ContactForm() {
     return (
         <Form>
             <FormRow>
-                <Input type="text" placeholder={language.dictionary.name} onChange={(e) => setName(e.target.value)} />
-                <Input type="email" placeholder={language.dictionary.email} onChange={(e) => setEmail(e.target.value)}  />
+                <Input type="text" placeholder={language.dictionary.name} value={name} onChange={(e) => setName(e.target.value)} />
+                <Input type="email" placeholder={language.dictionary.email} value={email} onChange={(e) => setEmail(e.target.value)}  />
             </FormRow>
             <FormRow>
-                <Textarea placeholder={language.dictionary.message} onChange={(e) => setMessage(e.target.value)}  />
+                <Textarea placeholder={language.dictionary.message} value={message} onChange={(e) => setMessage(e.target.value)}  />
             </FormRow>
             <FormRow>
                 <Button type="primary" onClick={async () => {
@@ -104,6 +104,10 @@ export function ContactForm() {
 
                         if (!result.ok)
                             setError(language.dictionary.failedToSendMessage);
+
+                        setName("");
+                        setEmail("");
+                        setMessage("");
 
                         setError(undefined);
                         setSuccess(language.dictionary.messageSent);
