@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+
+import { useLanguage } from "../hooks/LanguageProvider";
 
 import "../styles/components/Footer.scss";
-import { NavLink } from "react-router-dom";
-import { useLanguage } from "../hooks/LanguageProvider";
 
 export function FooterGroup({ children }: { children: ReactNode }) {
     return (
@@ -20,11 +21,22 @@ export function FooterItem({ children }: { children: ReactNode }) {
     );
 }
 
-export function Footer() {
+export function Footer({ fixed }: { fixed?: boolean }) {
     const language = useLanguage();
 
+    let [className, setClassName] = useState("footer");
+
+    useEffect(() => {
+        let newClassName = className;
+
+        if (fixed)
+            newClassName += " fixed";
+
+        setClassName(newClassName);
+    }, [fixed]);
+
     return (
-        <footer className="footer">
+        <footer className={className}>
             <FooterGroup>
                 <FooterItem>
                     <h4>{language.dictionary.otherLinks}</h4>
@@ -35,7 +47,7 @@ export function Footer() {
             </FooterGroup>
             <FooterGroup>
                 <FooterItem>
-                    <p>&copy; 2024 Danya Grachov</p>
+                    <p>&copy; {new Date().getFullYear()} Danya Grachov</p>
                 </FooterItem>
             </FooterGroup>
         </footer>
