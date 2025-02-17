@@ -42,17 +42,17 @@ export function Home() {
                 <BlockTitle>{language.dictionary.experience}</BlockTitle>
                 <LimitWidth>
                     <Inline center>
-                        <Tag label={language.dictionary.desktopDev}>C++</Tag>
-                        <Tag label={language.dictionary.desktopDev}>C#</Tag>
-                        <Tag label={language.dictionary.gameDev}>Lua/Luau</Tag>
-                        <Tag label={language.dictionary.webDev}>NodeJS</Tag>
-                        <Tag label={language.dictionary.webDev}>React</Tag>
-                        <Tag label={language.dictionary.webDev}>SCSS</Tag>
-                        <Tag label={language.dictionary.webDev}>TypeScript</Tag>
-                        <Tag label={language.dictionary.webDev}>PHP</Tag>
-                        <Tag label={language.dictionary.backendDev}>SQL (MySQL/PostgresSQL)</Tag>
-                        <Tag label={language.dictionary.prodEnv}>Docker</Tag>
-                        <Tag label={language.dictionary.vcs}>Git</Tag>
+                        <Tag label={language.dictionary.cppExp}>C++</Tag>
+                        <Tag label={language.dictionary.csExp}>C#</Tag>
+                        <Tag label={language.dictionary.luaExp}>Lua/Luau</Tag>
+                        <Tag label={language.dictionary.jsExp}>NodeJS</Tag>
+                        <Tag label={language.dictionary.reactExp}>React</Tag>
+                        <Tag label={language.dictionary.scssExp}>SCSS</Tag>
+                        <Tag label={language.dictionary.tsExp}>TypeScript</Tag>
+                        <Tag label={language.dictionary.phpDev}>PHP</Tag>
+                        <Tag label={language.dictionary.sqlExp}>SQL (MySQL/PostgresSQL)</Tag>
+                        <Tag label={language.dictionary.dockerExp}>Docker</Tag>
+                        <Tag label={language.dictionary.gitExp}>Git</Tag>
                     </Inline>
                 </LimitWidth>
             </Block>
