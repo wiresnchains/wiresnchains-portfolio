@@ -44,6 +44,7 @@ export function Home() {
                     <Inline center>
                         <Tag label={language.dictionary.cppExp}>C++</Tag>
                         <Tag label={language.dictionary.csExp}>C#</Tag>
+                        <Tag label={language.dictionary.javaExp}>Java</Tag>
                         <Tag label={language.dictionary.luaExp}>Lua/Luau</Tag>
                         <Tag label={language.dictionary.jsExp}>NodeJS</Tag>
                         <Tag label={language.dictionary.reactExp}>React</Tag>

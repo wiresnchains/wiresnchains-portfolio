@@ -15,6 +15,7 @@ import gameScreenshot01 from "../assets/images/01.webp";
 import gameScreenshot02 from "../assets/images/02.webp";
 import gameScreenshot03 from "../assets/images/03.webp";
 import gameScreenshot04 from "../assets/images/04.webp";
+import auroraScreenshot01 from "../assets/images/aurora.png";
 
 export function Projects() {
     const language = useLanguage();
@@ -28,6 +29,31 @@ export function Projects() {
             <Block>
                 <BlockTitle>{language.dictionary.projects}</BlockTitle>
                 <Timeline>
+                    <TimelineEvent>
+                        <TimelineBlock>
+                            <h2>wiresnchains.com</h2>
+                            <p className="muted small">2024</p>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <p>{language.dictionary.wncDesc}</p>
+                            <Inline>
+                                <NavLink to="https://wiresnchains.com/" target="_blank">Link</NavLink>
+                                <NavLink to="https://github.com/wiresnchains/wiresnchains-web" target="_blank">GitHub</NavLink>
+                            </Inline>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Web server">nginx</Tag>
+                                <Tag label="Production environment">Docker</Tag>
+                                <Tag label="Server side + Build system">NodeJS</Tag>
+                                <Tag label="API server">Express</Tag>
+                                <Tag label="Static typing">TypeScript</Tag>
+                                <Tag label="Frontend">React</Tag>
+                                <Tag label="Frontend">SCSS</Tag>
+                            </Inline>
+                        </TimelineBlock>
+                    </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
                             <h2>V9</h2>
@@ -51,12 +77,13 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <p>{language.dictionary.fusionDesc}</p>
-                            <NavLink to="https://github.com/wiresnchains/fusion" target="_blank">GitHub</NavLink>
+                            <NavLink to="https://github.com/wiresnchains/cardspire/tree/dev" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
                             <Inline>
                                 <Tag label="OpenGL + SDL2">C++</Tag>
+                                <Tag label="Shading">GLSL</Tag>
                             </Inline>
                         </TimelineBlock>
                     </TimelineEvent>
@@ -69,11 +96,21 @@ export function Projects() {
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
                             <Inline>
+                                <Tag label="Production environment">Docker</Tag>
                                 <Tag label="Server">NodeJS</Tag>
                                 <Tag label="Server-side + Frontend logic">TypeScript</Tag>
                                 <Tag label="Frontend">SCSS</Tag>
                                 <Tag label="Frontend">Wave.js</Tag>
                             </Inline>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <Fancybox>
+                                <Inline>
+                                    <a data-fancybox="gallery" href={auroraScreenshot01}>
+                                        <img src={auroraScreenshot01} alt="aurora-screenshot-01" />
+                                    </a>
+                                </Inline>
+                            </Fancybox>
                         </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
@@ -99,7 +136,7 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <p>{language.dictionary.emDesc}</p>
-                            <NavLink to="#" target="_blank">Link</NavLink>
+                            <NavLink to="https://www.roblox.com/games/8898754223/" target="_blank">Link</NavLink>
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>

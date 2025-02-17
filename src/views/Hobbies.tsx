@@ -14,7 +14,7 @@ export function Hobbies() {
         </Helmet>
             <Navbar alwaysScrolled />
             <Block>
-                <h1>{}</h1>
+                <h1>{language.dictionary.hobbies}</h1>
             </Block>
             <Footer fixed />
         </>
