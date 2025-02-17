@@ -53,6 +53,9 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         auroraDesc: "An RPG game server in GTA 5 Multiplayer using NodeJS + TypeScript (and wave.js for frontend)",
         fusionDesc: "A C++ Game engine for 2D/3D rendering using SDL2 + OpenGL",
         v9desc: "My own interpreted scripting language designed for static & strict typing",
+        pageNotFound: "Page not found",
+        error: "Something went wrong...",
+        backHome: "Back home",
 
         // Navigation
         home: "Home",
@@ -96,6 +99,9 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         auroraDesc: "Een RPG-gameserver in GTA 5 Multiplayer met NodeJS + TypeScript (en wave.js voor de frontend)",
         fusionDesc: "Een C++ game engine voor 2D/3D-rendering met SDL2 + OpenGL",
         v9desc: "Mijn eigen geïnterpreteerde scripttaal, ontworpen voor statische en strikte types",
+        pageNotFound: "Pagina niet gevonden",
+        error: "Er is iets misgegaan...",
+        backHome: "Terug naar index",
 
         // Navigation
         home: "Index",
