@@ -47,6 +47,11 @@ export function Footer({ fixed }: { fixed?: boolean }) {
             </FooterGroup>
             <FooterGroup>
                 <FooterItem>
+                    <p>{language.dictionary.contact}: <a href="mailto:dgrachov@icloud.com">dgrachov@icloud.com</a></p>
+                </FooterItem>
+            </FooterGroup>
+            <FooterGroup>
+                <FooterItem>
                     <p>&copy; {new Date().getFullYear()} Danya Grachov</p>
                 </FooterItem>
             </FooterGroup>

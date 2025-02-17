@@ -7,6 +7,7 @@ import { Navbar } from "../components/Nav";
 import { Timeline, TimelineBlock, TimelineEvent } from "../components/Timeline";
 import { Inline } from "../components/Inline";
 import Fancybox from "../components/Fancybox";
+import { Tag } from "../components/Tag";
 
 import { useLanguage } from "../hooks/LanguageProvider";
 
@@ -36,6 +37,12 @@ export function Projects() {
                             <p>{language.dictionary.v9desc}</p>
                             <NavLink to="https://github.com/wiresnchains/v9" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Lexer, parser & interpreter">C++</Tag>
+                            </Inline>
+                        </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
@@ -46,11 +53,28 @@ export function Projects() {
                             <p>{language.dictionary.fusionDesc}</p>
                             <NavLink to="https://github.com/wiresnchains/fusion" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="OpenGL + SDL2">C++</Tag>
+                            </Inline>
+                        </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
-                        <h2>Aurora</h2>
-                        <p className="muted small">2024</p>
-                        <p>{language.dictionary.auroraDesc}</p>
+                        <TimelineBlock>
+                            <h2>Aurora</h2>
+                            <p className="muted small">2024</p>
+                            <p>{language.dictionary.auroraDesc}</p>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Server">NodeJS</Tag>
+                                <Tag label="Server-side + Frontend logic">TypeScript</Tag>
+                                <Tag label="Frontend">SCSS</Tag>
+                                <Tag label="Frontend">Wave.js</Tag>
+                            </Inline>
+                        </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
@@ -61,6 +85,12 @@ export function Projects() {
                             <p>{language.dictionary.waveDesc}</p>
                             <NavLink to="https://github.com/wiresnchains/wave" target="_blank">GitHub</NavLink>
                         </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Strong JS typing">TypeScript</Tag>
+                            </Inline>
+                        </TimelineBlock>
                     </TimelineEvent>
                     <TimelineEvent>
                         <TimelineBlock>
@@ -70,6 +100,12 @@ export function Projects() {
                         <TimelineBlock>
                             <p>{language.dictionary.emDesc}</p>
                             <NavLink to="#" target="_blank">Link</NavLink>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Server, Client & UI">Roblox Luau</Tag>
+                            </Inline>
                         </TimelineBlock>
                         <TimelineBlock>
                             <Fancybox>
@@ -95,10 +131,16 @@ export function Projects() {
                             <h2>FinalForum</h2>
                             <p className="muted small">2020</p>
                         </TimelineBlock>
-
                         <TimelineBlock>
                             <p>{language.dictionary.finalforumDesc}</p>
                             <NavLink to="https://github.com/wiresnchains/finalforum" target="_blank">GitHub</NavLink>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Server">PHP</Tag>
+                                <Tag label="Database">MySQL</Tag>
+                            </Inline>
                         </TimelineBlock>
                     </TimelineEvent>
                 </Timeline>
