@@ -50,7 +50,7 @@ export function Home() {
                         <Tag label={language.dictionary.scssExp}>SCSS</Tag>
                         <Tag label={language.dictionary.tsExp}>TypeScript</Tag>
                         <Tag label={language.dictionary.phpDev}>PHP</Tag>
-                        <Tag label={language.dictionary.sqlExp}>SQL (MySQL/PostgresSQL)</Tag>
+                        <Tag label={language.dictionary.sqlExp}>SQL (MySQL)</Tag>
                         <Tag label={language.dictionary.dockerExp}>Docker</Tag>
                         <Tag label={language.dictionary.gitExp}>Git</Tag>
                     </Inline>

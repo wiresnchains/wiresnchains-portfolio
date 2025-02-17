@@ -56,6 +56,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         pageNotFound: "Page not found",
         error: "Something went wrong...",
         backHome: "Back home",
+        hobbies: "My Hobbies",
 
         // Navigation
         home: "Home",
@@ -102,6 +103,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         pageNotFound: "Pagina niet gevonden",
         error: "Er is iets misgegaan...",
         backHome: "Terug naar index",
+        hobbies: "Mijn Hobbies",
 
         // Navigation
         home: "Index",
