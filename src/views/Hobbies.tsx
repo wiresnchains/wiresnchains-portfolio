@@ -9,9 +9,9 @@ export function Hobbies() {
     
     return (
         <>
-        <Helmet>
-            <title>{language.dictionary.heading} - {language.dictionary.hobbies}</title>
-        </Helmet>
+            <Helmet>
+                <title>{language.dictionary.heading} - {language.dictionary.hobbies}</title>
+            </Helmet>
             <Navbar alwaysScrolled />
             <Block>
                 <h1>{language.dictionary.hobbies}</h1>
