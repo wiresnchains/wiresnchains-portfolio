@@ -42,6 +42,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Web server">nginx</Tag>
                                 <Tag label="Production environment">Docker</Tag>
@@ -67,6 +69,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Web server">nginx</Tag>
                                 <Tag label="Production environment">Docker</Tag>
@@ -89,6 +93,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Lexer, parser & interpreter">C++</Tag>
                             </Inline>
@@ -105,6 +111,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="OpenGL + SDL2">C++</Tag>
                                 <Tag label="Shading">GLSL</Tag>
@@ -119,6 +127,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Production environment">Docker</Tag>
                                 <Tag label="Server">NodeJS</Tag>
@@ -148,6 +158,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Strong JS typing">TypeScript</Tag>
                             </Inline>
@@ -164,6 +176,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Server, Client & UI">Roblox Luau</Tag>
                             </Inline>
@@ -198,6 +212,8 @@ export function Projects() {
                         </TimelineBlock>
                         <TimelineBlock>
                             <h4>Tech Stack</h4>
+                        </TimelineBlock>
+                        <TimelineBlock>
                             <Inline>
                                 <Tag label="Server">PHP</Tag>
                                 <Tag label="Database">MySQL</Tag>
