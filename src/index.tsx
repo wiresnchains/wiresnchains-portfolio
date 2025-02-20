@@ -6,6 +6,7 @@ import { LanguageProvider } from "./hooks/LanguageProvider";
 
 import { Home } from "./views/Home";
 import { Projects } from "./views/Projects";
+import { Educatie } from "./views/Education";
 import { ErrorPage } from "./views/ErrorPage";
 
 import "./styles/style.scss";
@@ -25,6 +26,11 @@ import "./styles/style.scss";
         {
             path: "/projects",
             element: <Projects />,
+            errorElement: <ErrorPage />
+        },
+        {
+            path: "/education",
+            element: <Educatie />,
             errorElement: <ErrorPage />
         }
     ]);

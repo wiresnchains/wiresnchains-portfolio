@@ -34,7 +34,13 @@ export function Home() {
             <Block refHook={aboutMeBlock}>
                 <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
                 <LimitWidth>
-                    <p className="muted">{language.dictionary.aboutMeText}</p>
+                    <p className="muted">{language.dictionary.aboutMePart1}</p>
+                    <br />
+                    <p className="muted">{language.dictionary.aboutMePart2}</p>
+                    <br />
+                    <p className="muted">{language.dictionary.aboutMePart3}</p>
+                    <br />
+                    <p className="muted">{language.dictionary.aboutMePart4}</p>
                 </LimitWidth>
             </Block>
 

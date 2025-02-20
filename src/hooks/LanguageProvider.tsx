@@ -47,7 +47,10 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         sqlExp: "4 years+ experience",
         dockerExp: "<1 year experience",
         gitExp: "2 years+ experience",
-        aboutMeText: `I am ${calculateYearsFrom("2007-08-13")} years old and I am from Ukraine. I have shown interest in programming since I was young, and began writing small scripts using Visual Basic. In my free time I like to play guitar or spend time with my friends. I have played guitar since I was 10 years old. One of my hobbies is snowboarding, me and my family used to go to the carpathian mountains every winter.`,
+        aboutMePart1: `My name is Danya, I am ${calculateYearsFrom("2007-08-13")} years old, and I was born in Ukraine. My family moved to Kyiv when I was 6 years old, so that’s where I grew up. I am an introvert, so I am attentive, independent, and quiet.`,
+        aboutMePart2: "When I was 10 years old, I started studying software development by creating small apps with Visual Basic/Python, and now I am studying Software Development at Scalda.",
+        aboutMePart3: "Besides software development, I really love prog metal and prog rock music, like Bring Me The Horizon or Unprocessed, and I play electric guitar. I also enjoy snowboarding - we used to go to the Carpathian mountains almost every winter with my family.",
+        aboutMePart4: "In the future, I want to become a full-stack developer because I enjoy both back-end and front-end development.",
         finalforumDesc: "A forum engine with registration, posts, categories, automatic database setup and admin panel",
         emDesc: "An RPG game on Roblox with multiple progression paths",
         waveDesc: "A JavaScript library for front-end development with a state manager",
@@ -59,10 +62,18 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         pageNotFound: "Page not found",
         error: "Something went wrong...",
         backHome: "Back home",
-        hobbies: "My Hobbies",
+        passed: "Passed",
+        lbs: "LBS (Career management)",
+        isk: "ISK (International Dutch School)",
+        classesAndResults: "Classes & results",
+        speaking: "Speaking",
+        listening: "Listening",
+        writing: "Speaking",
+        maths: "Maths",
 
         // Navigation
         home: "Home",
+        education: "Education",
         experience: "Experience",
 
         // Languages
@@ -97,7 +108,10 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         sqlExp: "4 jaar+ ervaring",
         dockerExp: "<1 jaar ervaring",
         gitExp: "2 jaar+ ervaring",
-        aboutMeText: `Ik ben ${calculateYearsFrom("2007-08-13")} jaar oud en ik kom uit Oekraïne. Ik heb al interesse in programmeren sinds ik jong was en ben begonnen met het schrijven van kleine scripts met Visual Basic. In mijn vrije tijd speel ik graag gitaar of breng ik tijd door met mijn vrienden. Ik speel gitaar sinds ik 10 jaar oud was. Een van mijn hobby's is snowboarden, ik en mijn familie gingen elke winter naar de Karpaten.`,
+        aboutMePart1: `Mijn naam is Danya, ik ben ${calculateYearsFrom("2007-08-13")} jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.`,
+        aboutMePart2: "Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.",
+        aboutMePart3: "Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.",
+        aboutMePart4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vindt.",
         finalforumDesc: "Een forumengine met registratie, berichten, categorieën, automatische databaseconfiguratie en een beheerderspaneel",
         emDesc: "Een RPG-spel op Roblox met meerdere progressiepaden",
         waveDesc: "Een JavaScript-bibliotheek voor front-end ontwikkeling met een toestandsbeheerder",
@@ -109,10 +123,18 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         pageNotFound: "Pagina niet gevonden",
         error: "Er is iets misgegaan...",
         backHome: "Terug naar index",
-        hobbies: "Mijn Hobbies",
+        passed: "Behaald",
+        lbs: "LBS (Loopbaansturing)",
+        isk: "ISK (Internationale schakelklas)",
+        classesAndResults: "Vakken & cijfers",
+        speaking: "Spreken",
+        listening: "Luisteren",
+        writing: "Schrijven",
+        maths: "Rekenen & Wiskunde",
 
         // Navigation
         home: "Index",
+        education: "Educatie",
         experience: "Ervaring",
 
         // Languages

@@ -81,6 +81,9 @@ export function Navbar({ alwaysScrolled, fixed }: { alwaysScrolled?: boolean, fi
                     <NavLink to="/projects">{language.dictionary.projects}</NavLink>
                 </NavItem>
                 <NavItem>
+                    <NavLink to="/education">{language.dictionary.education}</NavLink>
+                </NavItem>
+                <NavItem>
                     <DropdownMenu title={language.dictionary.language}>
                         <DropdownItem active={language.userLanguage === "EN"}>
                             <button onClick={() => language.setUserLanguage("EN")}>English</button>
