@@ -6,7 +6,6 @@ import { LanguageProvider } from "./hooks/LanguageProvider";
 
 import { Home } from "./views/Home";
 import { Projects } from "./views/Projects";
-import { Hobbies } from "./views/Hobbies";
 import { ErrorPage } from "./views/ErrorPage";
 
 import "./styles/style.scss";
@@ -26,11 +25,6 @@ import "./styles/style.scss";
         {
             path: "/projects",
             element: <Projects />,
-            errorElement: <ErrorPage />
-        },
-        {
-            path: "/hobbies",
-            element: <Hobbies />,
             errorElement: <ErrorPage />
         }
     ]);
