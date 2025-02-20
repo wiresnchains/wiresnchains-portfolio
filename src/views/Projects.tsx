@@ -31,6 +31,30 @@ export function Projects() {
                 <Timeline>
                     <TimelineEvent>
                         <TimelineBlock>
+                            <h2>my.wiresnchains.com</h2>
+                            <p className="muted small">2025</p>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <p>{language.dictionary.portfolioDesc}</p>
+                            <Inline>
+                                <NavLink to="https://github.com/wiresnchains/portfolio" target="_blank">GitHub</NavLink>
+                            </Inline>
+                        </TimelineBlock>
+                        <TimelineBlock>
+                            <h4>Tech Stack</h4>
+                            <Inline>
+                                <Tag label="Web server">nginx</Tag>
+                                <Tag label="Production environment">Docker</Tag>
+                                <Tag label="Build system">NodeJS</Tag>
+                                <Tag label="API server">Express</Tag>
+                                <Tag label="Static typing">TypeScript (TSX)</Tag>
+                                <Tag label="Frontend">React</Tag>
+                                <Tag label="Frontend">SCSS</Tag>
+                            </Inline>
+                        </TimelineBlock>
+                    </TimelineEvent>
+                    <TimelineEvent>
+                        <TimelineBlock>
                             <h2>wiresnchains.com</h2>
                             <p className="muted small">2024</p>
                         </TimelineBlock>
