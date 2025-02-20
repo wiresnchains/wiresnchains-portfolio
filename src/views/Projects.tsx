@@ -48,7 +48,6 @@ export function Projects() {
                                 <Tag label="Web server">nginx</Tag>
                                 <Tag label="Production environment">Docker</Tag>
                                 <Tag label="Build system">NodeJS</Tag>
-                                <Tag label="API server">Express</Tag>
                                 <Tag label="Static typing">TypeScript (TSX)</Tag>
                                 <Tag label="Frontend">React</Tag>
                                 <Tag label="Frontend">SCSS</Tag>
