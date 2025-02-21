@@ -54,7 +54,7 @@ export function Educatie() {
                         <TimelineBlock>
                             <h2>British International School Kyiv</h2>
                             <p className="muted small">Kyiv, UA</p>
-                            <p className="muted small">2015-2022</p>
+                            <p className="muted small">2013-2022</p>
                         </TimelineBlock>
                     </TimelineEvent>
                 </Timeline>
