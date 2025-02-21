@@ -15,7 +15,7 @@ import gameScreenshot01 from "../assets/images/01.webp";
 import gameScreenshot02 from "../assets/images/02.webp";
 import gameScreenshot03 from "../assets/images/03.webp";
 import gameScreenshot04 from "../assets/images/04.webp";
-import auroraScreenshot01 from "../assets/images/aurora.png";
+import auroraScreenshot01 from "../assets/images/aurora.webp";
 
 export function Projects() {
     const language = useLanguage();
