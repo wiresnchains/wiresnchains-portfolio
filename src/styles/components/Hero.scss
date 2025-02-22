@@ -23,7 +23,7 @@
     position: relative;
     color: #fff;
 
-    @include utils.dim-background(#000, 0.5, "../../assets/images/wallpaper.jpg");
+    @include utils.dim-background(#000, 0.5, "../../assets/images/wallpaper.webp");
 
     .hero-content {
         text-align: center;
