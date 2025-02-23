@@ -12,14 +12,6 @@ export function Block({ refHook, children }: { refHook?: MutableRefObject<HTMLEl
 
 export function BlockTitle({ children }: { children: ReactNode }) {
     return (
-        <h1 className="block-title">{children}</h1>
-    );
-}
-
-export function LimitWidth({ children }: { children: ReactNode }) {
-    return (
-        <div className="limit-width">
-            {children}
-        </div>
+        <h2 className="block-title">{children}</h2>
     );
 }

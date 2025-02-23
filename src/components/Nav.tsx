@@ -1,35 +1,15 @@
-import { ReactNode, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { MutableRefObject, ReactNode, useState } from "react";
 
 import { useLanguage } from "../hooks/LanguageProvider";
-import { DropdownMenu, DropdownItem } from "./Dropdown";
 
 import "../styles/components/Nav.scss";
 
-export enum NavGroupSide {
-    Left,
-    Right
-}
+import uk from "../assets/images/uk.webp";
+import nl from "../assets/images/nl.webp";
 
-export function NavGroup({ side, children }: { side?: NavGroupSide, children: ReactNode }) {
-    const [sideClass, setSideClass] = useState("left");
-
-    useEffect(() => {
-        switch (side) {
-            case NavGroupSide.Left:
-                setSideClass("left");
-                break;
-            case NavGroupSide.Right:
-                setSideClass("right");
-                break;
-            default:
-                setSideClass("left");
-                break;
-        }
-    }, [side]);
-
+export function NavGroup({ children }: { children: ReactNode }) {
     return (
-        <ul className={"nav-group " + sideClass}>
+        <ul className="nav-group">
             {children}
         </ul>
     );
@@ -43,55 +23,56 @@ export function NavItem({ children }: { children: ReactNode }) {
     );
 }
 
-export function Nav({ alwaysScrolled, fixed, children }: { alwaysScrolled?: boolean, fixed?: boolean, children: ReactNode }) {
-    const [scrolled, setScrolled] = useState(false);
+export function Nav({ children }: { children: ReactNode }) {
+    const [className, setClassName] = useState("nav");
 
     window.addEventListener("scroll", () => {
-        setScrolled(window.scrollY > 1);
+        let newClassName = "nav";
+
+        if (window.scrollY > 1)
+            newClassName += " show-background";
+
+        setClassName(newClassName);
     });
 
-    let className = "nav";
-
-    if (alwaysScrolled)
-        className += " show-background";
-
-    if (fixed)
-        className += " fixed";
-
     return (
-        <nav className={scrolled ? className + " show-background" : className}>
+        <nav className={className}>
             {children}
         </nav>
     );
 }
 
-export function Navbar({ alwaysScrolled, fixed }: { alwaysScrolled?: boolean, fixed?: boolean }) {
+type NavRef = MutableRefObject<HTMLElement | null>;
+
+export function Navbar({ aboutMe, experience, projects, education, contact }: { aboutMe: NavRef, experience: NavRef, projects: NavRef, education: NavRef, contact: NavRef }) {
     const language = useLanguage();
     
     return (
-        <Nav alwaysScrolled={alwaysScrolled} fixed={fixed}>
-            <NavGroup side={NavGroupSide.Left}>
+        <Nav>
+            <NavGroup>
                 <NavItem>
-                    <h3>{language.dictionary.heading}</h3>
+                    <a href="#"><h3>{language.dictionary.heading}</h3></a>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/">{language.dictionary.home}</NavLink>
+                    <a onClick={() => aboutMe.current?.scrollIntoView()}>{language.dictionary.aboutMe}</a>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/projects">{language.dictionary.projects}</NavLink>
+                    <a onClick={() => experience.current?.scrollIntoView()}>{language.dictionary.experience}</a>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/education">{language.dictionary.education}</NavLink>
+                    <a onClick={() => projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>
                 </NavItem>
                 <NavItem>
-                    <DropdownMenu title={language.dictionary.language}>
-                        <DropdownItem active={language.userLanguage === "EN"}>
-                            <button onClick={() => language.setUserLanguage("EN")}>English</button>
-                        </DropdownItem>
-                        <DropdownItem active={language.userLanguage === "NL"}>
-                            <button onClick={() => language.setUserLanguage("NL")}>Nederlands</button>
-                        </DropdownItem>
-                    </DropdownMenu>
+                    <a onClick={() => education.current?.scrollIntoView()}>{language.dictionary.education}</a>
+                </NavItem>
+                <NavItem>
+                    <a onClick={() => contact.current?.scrollIntoView()}>{language.dictionary.contact}</a>
+                </NavItem>
+                <NavItem>
+                    <img src={uk} onClick={() => language.setUserLanguage("EN")} />
+                </NavItem>
+                <NavItem>
+                    <img src={nl} onClick={() => language.setUserLanguage("NL")} />
                 </NavItem>
             </NavGroup>
         </Nav>

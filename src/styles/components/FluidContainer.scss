@@ -9,10 +9,10 @@
     }
 
     .content {
-        max-width: 50%;
+        width: 50%;
 
         @media only screen and (max-width: sizing.$mobile-width-threshold) {
-            max-width: calc(100% - 2rem);
+            width: 100%;
         }
     }
 }

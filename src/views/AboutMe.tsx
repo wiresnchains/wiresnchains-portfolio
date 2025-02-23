@@ -1,4 +1,4 @@
-export function Education() {
+export function AboutMe() {
     return (
         <></>
     );

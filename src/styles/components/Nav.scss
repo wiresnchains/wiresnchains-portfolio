@@ -10,12 +10,10 @@
     gap: 2rem;
     transition: timing.$anim-time background, timing.$anim-time border-bottom;
     margin-bottom: sizing.$item-spacing;
-
-    &.fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
 
     .nav-group {
         display: flex;
@@ -23,25 +21,19 @@
         list-style: none;
         gap: 1rem;
 
-        &.left {
-            // TODO
-        }
-
-        &.right {
-            // TODO
-        }
-
         .nav-item {
             * {
                 color: #fff;
             }
 
+            img {
+                height: 0.8rem;
+                cursor: pointer;
+            }
+
             a {
+                cursor: pointer;
                 text-decoration: none;
-                
-                &.active {
-                    color: colors.$link;
-                }
             }
         }
     }
@@ -52,7 +44,9 @@
 
         .nav-item * {
             color: colors.$text;
+        }
 
+        .nav-item a {
             &:hover {
                 color: colors.$link-hover;
             }

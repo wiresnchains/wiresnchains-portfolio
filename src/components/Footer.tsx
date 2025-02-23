@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 
 import { useLanguage } from "../hooks/LanguageProvider";
 
@@ -42,7 +41,7 @@ export function Footer({ fixed }: { fixed?: boolean }) {
                     <h4>{language.dictionary.otherLinks}</h4>
                 </FooterItem>
                 <FooterItem>
-                    <NavLink to="https://github.com/wiresnchains/" target="_blank">GitHub</NavLink>
+                    <a href="https://github.com/wiresnchains/" target="_blank">GitHub</a>
                 </FooterItem>
             </FooterGroup>
             <FooterGroup>
