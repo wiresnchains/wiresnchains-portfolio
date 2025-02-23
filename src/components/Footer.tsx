@@ -38,7 +38,7 @@ export function Footer({ fixed }: { fixed?: boolean }) {
         <footer className={className}>
             <FooterGroup>
                 <FooterItem>
-                    <h4>{language.dictionary.otherLinks}</h4>
+                    <h5>{language.dictionary.otherLinks}</h5>
                 </FooterItem>
                 <FooterItem>
                     <a href="https://github.com/wiresnchains/" target="_blank">GitHub</a>
