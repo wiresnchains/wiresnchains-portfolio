@@ -17,7 +17,7 @@ interface IProject {
     description: string;
     links: Array<{ link: string, name: string }>;
     techStack: Array<{ label: string, name: string }>,
-    gallery: Array<string>
+    gallery: Array<{ src: string, alt: string }>
 }
 
 const PROJECT_LIST: Array<IProject> = [
@@ -72,7 +72,7 @@ const PROJECT_LIST: Array<IProject> = [
             { label: "Database", name: "MySQL" },
             { label: "Production environment", name: "Docker" }
         ],
-        gallery: [aurora01]
+        gallery: [{ src: aurora01, alt: "aurora-screenshot-01" }]
     },
 
     {
@@ -94,7 +94,7 @@ const PROJECT_LIST: Array<IProject> = [
         techStack: [
             { label: "Server, Client & UI", name: "Luau" }
         ],
-        gallery: [em01, em02, em03, em04]
+        gallery: [{ src: em01, alt: "endless-mines-screenshot-01" }, { src: em02, alt: "endless-mines-screenshot-02" }, { src: em03, alt: "endless-mines-screenshot-03" }, { src: em04, alt: "endless-mines-screenshot-04" }]
     },
 
     {
@@ -139,9 +139,9 @@ export function Projects() {
                             <TimelineBlock>
                                 <Fancybox>
                                     <Inline>
-                                        {project.gallery.map((src) => (
-                                            <a data-fancybox="gallery" href={src}>
-                                                <img src={src} />
+                                        {project.gallery.map((image) => (
+                                            <a data-fancybox="gallery" href={image.src}>
+                                                <img src={image.src} alt={image.alt} />
                                             </a>
                                         ))}
                                     </Inline>

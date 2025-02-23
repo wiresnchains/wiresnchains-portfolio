@@ -69,10 +69,10 @@ export function Navbar({ aboutMe, experience, projects, education, contact }: { 
                     <a onClick={() => contact.current?.scrollIntoView()}>{language.dictionary.contact}</a>
                 </NavItem>
                 <NavItem>
-                    <img src={uk} onClick={() => language.setUserLanguage("EN")} />
+                    <img src={uk} onClick={() => language.setUserLanguage("EN")} alt="en" />
                 </NavItem>
                 <NavItem>
-                    <img src={nl} onClick={() => language.setUserLanguage("NL")} />
+                    <img src={nl} onClick={() => language.setUserLanguage("NL")} alt="nl" />
                 </NavItem>
             </NavGroup>
         </Nav>
