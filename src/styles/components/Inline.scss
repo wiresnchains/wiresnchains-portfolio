@@ -5,6 +5,14 @@
     gap: sizing.$item-spacing;
     flex-wrap: wrap;
 
+    &.nowrap {
+        flex-wrap: nowrap;
+
+        > * {
+            width: 100%;
+        }
+    }
+
     &.center {
         justify-content: center;
     }

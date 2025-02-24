@@ -44,9 +44,7 @@ export function App() {
             </Hero>
             <Block refHook={aboutMe}>
                 <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
-                <FluidContainer center>
-                    <AboutMe />
-                </FluidContainer>
+                <AboutMe />
             </Block>
             <Block refHook={experience}>
                 <BlockTitle>{language.dictionary.experience}</BlockTitle>

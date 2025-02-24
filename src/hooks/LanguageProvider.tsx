@@ -48,6 +48,11 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         dockerExp: "<1 year experience",
         gitExp: "2+ years experience",
         gallery: "Gallery",
+        aboutMeHeading: "My name is Danya,",
+        aboutMeParagraph1: "Mijn naam is Danya, ik ben 17 jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.",
+        aboutMeParagraph2: "Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.",
+        aboutMeParagraph3: "Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of  Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.",
+        aboutMeParagraph4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vindt.",
 
         // Navigation
         education: "Education",
@@ -84,6 +89,11 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         dockerExp: "<1 jaar  ervaring",
         gitExp: "2+ jaar ervaring",
         gallery: "Galerij",
+        aboutMeHeading: "Mijn naam is Danya,",
+        aboutMeParagraph1: "Mijn naam is Danya, ik ben 17 jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.",
+        aboutMeParagraph2: "Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.",
+        aboutMeParagraph3: "Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of  Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.",
+        aboutMeParagraph4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vindt.",
 
         // Navigation
         education: "Educatie",
