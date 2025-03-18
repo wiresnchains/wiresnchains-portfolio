@@ -49,14 +49,14 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         gitExp: "2+ years experience",
         gallery: "Gallery",
         aboutMeHeading: "My name is Danya,",
-        aboutMeParagraph1: "Mijn naam is Danya, ik ben 17 jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.",
-        aboutMeParagraph2: "Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.",
-        aboutMeParagraph3: "Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of  Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.",
-        aboutMeParagraph4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vindt.",
+        aboutMeParagraph1: `I am ${calculateYearsFrom("2007-08-13")} years old and was born in Ukraine. My family moved to Kyiv when I was 6 years old, so I grew up there. I am an introvert, so I am attentive, independent, and quiet.`,
+        aboutMeParagraph2: "When I was 10 years old, I started studying software development by making small apps with Visual Basic/Python, and now I am studying Software Development at Scalda.",
+        aboutMeParagraph3: "Besides software development, I really love prog metal and prog rock music, such as Bring Me The Horizon or Unprocessed, and I play electric guitar. I also enjoy snowboarding—my family took me to the Carpathians every winter.",
+        aboutMeParagraph4: "In the future, I want to become a full-stack developer because I enjoy both back-end and front-end development.",
 
         // Navigation
         education: "Education",
-        experience: "Experience",
+        tools: "Tools",
         portfolio: "Portfolio"
     },
 
@@ -90,14 +90,14 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         gitExp: "2+ jaar ervaring",
         gallery: "Galerij",
         aboutMeHeading: "Mijn naam is Danya,",
-        aboutMeParagraph1: "Mijn naam is Danya, ik ben 17 jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.",
+        aboutMeParagraph1: `Ik ben ${calculateYearsFrom("2007-08-13")} jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.`,
         aboutMeParagraph2: "Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.",
         aboutMeParagraph3: "Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of  Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.",
-        aboutMeParagraph4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vindt.",
+        aboutMeParagraph4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vind.",
 
         // Navigation
         education: "Educatie",
-        experience: "Ervaring",
+        tools: "Tools",
         portfolio: "Portfolio"
     }
 }
