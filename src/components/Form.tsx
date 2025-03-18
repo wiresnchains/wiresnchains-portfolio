@@ -94,7 +94,7 @@ export function ContactForm() {
                             ]
                         };
 
-                        let result = await fetch(process.env.REACT_APP_CONTACT_DISCORD_WEBHOOK_URL as string, {
+                        let result = await fetch(import.meta.env.VITE_CONTACT_DISCORD_WEBHOOK_URL as string, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
