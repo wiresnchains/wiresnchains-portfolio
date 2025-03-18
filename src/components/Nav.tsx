@@ -44,7 +44,7 @@ export function Nav({ children }: { children: ReactNode }) {
 
 type NavRef = MutableRefObject<HTMLElement | null>;
 
-export function Navbar({ aboutMe, experience, projects, education, contact }: { aboutMe: NavRef, experience: NavRef, projects: NavRef, education: NavRef, contact: NavRef }) {
+export function Navbar({ aboutMe, tools, projects, education, contact }: { aboutMe: NavRef, tools: NavRef, projects: NavRef, education: NavRef, contact: NavRef }) {
     const language = useLanguage();
     
     return (
@@ -57,7 +57,7 @@ export function Navbar({ aboutMe, experience, projects, education, contact }: { 
                     <a onClick={() => aboutMe.current?.scrollIntoView()}>{language.dictionary.aboutMe}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => experience.current?.scrollIntoView()}>{language.dictionary.experience}</a>
+                    <a onClick={() => tools.current?.scrollIntoView()}>{language.dictionary.tools}</a>
                 </NavItem>
                 <NavItem>
                     <a onClick={() => projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>

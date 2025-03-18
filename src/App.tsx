@@ -22,7 +22,7 @@ export function App() {
     const language = useLanguage();
 
     const aboutMe = useRef<HTMLElement | null>(null);
-    const experience = useRef<HTMLElement | null>(null);
+    const tools = useRef<HTMLElement | null>(null);
     const projects = useRef<HTMLElement | null>(null);
     const education = useRef<HTMLElement | null>(null);
     const contact = useRef<HTMLElement | null>(null);
@@ -32,7 +32,7 @@ export function App() {
             <Helmet>
                 <title>{language.dictionary.heading} - {language.dictionary.portfolio}</title>
             </Helmet>
-            <Navbar aboutMe={aboutMe} experience={experience} projects={projects} education={education} contact={contact} />
+            <Navbar aboutMe={aboutMe} tools={tools} projects={projects} education={education} contact={contact} />
             <Hero>
                 <h1>{language.dictionary.heading}</h1>
                 <p>{language.dictionary.description}</p>
@@ -46,8 +46,8 @@ export function App() {
                 <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
                 <AboutMe />
             </Block>
-            <Block refHook={experience}>
-                <BlockTitle>{language.dictionary.experience}</BlockTitle>
+            <Block refHook={tools}>
+                <BlockTitle>{language.dictionary.tools}</BlockTitle>
                 <FluidContainer center>
                     <Experience />
                 </FluidContainer>
