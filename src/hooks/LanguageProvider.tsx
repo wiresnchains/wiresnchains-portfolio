@@ -54,6 +54,11 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         aboutMeParagraph3: "Besides software development, I really love prog metal and prog rock music, such as Bring Me The Horizon or Unprocessed, and I play electric guitar. I also enjoy snowboarding—my family took me to the Carpathians every winter.",
         aboutMeParagraph4: "In the future, I want to become a full-stack developer because I enjoy both back-end and front-end development.",
 
+        // Projects
+        v9desc: "My own interpreted scripting language designed for static & strict typing",
+        emDesc: "RPG game with infinite mining generation",
+        auroraDesc: "An RPG game server in GTA 5 multiplayer",
+
         // Navigation
         education: "Education",
         tools: "Tools",
@@ -94,6 +99,11 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
         aboutMeParagraph2: "Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.",
         aboutMeParagraph3: "Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of  Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.",
         aboutMeParagraph4: "In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vind.",
+
+        // Projects
+        v9desc: "Mijn eigen geïnterpreteerde scripttaal, ontworpen voor statische en strikte typecontrole",
+        emDesc: "RPG-spel met oneindige mijnbouwgeneratie",
+        auroraDesc: "Een RPG-game server in GTA 5 multiplayer",
 
         // Navigation
         education: "Educatie",
