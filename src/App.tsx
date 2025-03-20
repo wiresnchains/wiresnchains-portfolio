@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { Helmet } from "react-helmet";
 
 import { Hero, ScrollIndicator } from "./components/Hero";
 import { Inline } from "./components/Inline";
@@ -8,6 +7,7 @@ import { Navbar } from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { Block, BlockTitle } from "./components/Block";
 import { ContactModal } from "./components/Modal";
+import { FluidContainer } from "./components/FluidContainer";
 
 import { AboutMe } from "./views/AboutMe";
 import { Experience } from "./views/Experience";
@@ -15,7 +15,7 @@ import { Projects } from "./views/Projects";
 import { Education } from "./views/Education";
 
 import { useLanguage } from "./hooks/LanguageProvider";
-import { FluidContainer } from "./components/FluidContainer";
+import { useTitle } from "./hooks/Title";
 
 export function App() {
     const [showContact, setShowContact] = useState(false);
@@ -27,11 +27,10 @@ export function App() {
     const education = useRef<HTMLElement | null>(null);
     const contact = useRef<HTMLElement | null>(null);
 
+    useTitle(`${language.dictionary.heading} - ${language.dictionary.portfolio}`);
+
     return (
         <>
-            <Helmet>
-                <title>{language.dictionary.heading} - {language.dictionary.portfolio}</title>
-            </Helmet>
             <Navbar aboutMe={aboutMe} tools={tools} projects={projects} education={education} contact={contact} />
             <Hero>
                 <h1>{language.dictionary.heading}</h1>
