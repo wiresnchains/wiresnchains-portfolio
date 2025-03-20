@@ -71,7 +71,7 @@ export function App() {
                 </FluidContainer>
             </Block>
             <Footer />
-            {showContact && <ContactModal onClose={() => setShowContact(false)} />}
+            <ContactModal show={showContact} onClose={() => setShowContact(false)} />
         </>
     );
 }
