@@ -22,8 +22,8 @@ export function App() {
     const language = useLanguage();
 
     const aboutMe = useRef<HTMLElement | null>(null);
-    const tools = useRef<HTMLElement | null>(null);
     const projects = useRef<HTMLElement | null>(null);
+    const tools = useRef<HTMLElement | null>(null);
     const education = useRef<HTMLElement | null>(null);
     const contact = useRef<HTMLElement | null>(null);
 
@@ -46,16 +46,16 @@ export function App() {
                 <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
                 <AboutMe />
             </Block>
-            <Block refHook={tools}>
-                <BlockTitle>{language.dictionary.tools}</BlockTitle>
-                <FluidContainer center>
-                    <Experience />
-                </FluidContainer>
-            </Block>
             <Block refHook={projects}>
                 <BlockTitle>{language.dictionary.projects}</BlockTitle>
                 <FluidContainer center>
                     <Projects />
+                </FluidContainer>
+            </Block>
+            <Block refHook={tools}>
+                <BlockTitle>{language.dictionary.tools}</BlockTitle>
+                <FluidContainer center>
+                    <Experience />
                 </FluidContainer>
             </Block>
             <Block refHook={education}>
