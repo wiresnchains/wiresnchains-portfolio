@@ -1,0 +1,45 @@
+@use "../settings/sizing.scss";
+
+.card {
+    background: #fff;
+    padding: sizing.$item-spacing * 4;
+    width: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: sizing.$item-spacing;
+    text-align: left;
+
+    > * {
+        width: 100%;
+    }
+
+    .card-gallery {
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 1rem;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+            .hover {
+                display: flex;
+            }
+        }
+
+        .hover {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: rgb(#000, 0.5);
+            pointer-events: none;
+            user-select: none;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
