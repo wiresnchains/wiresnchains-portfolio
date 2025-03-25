@@ -69,6 +69,9 @@ export function Navbar({ aboutMe, tools, projects, education, contact }: { about
                     <a onClick={() => contact.current?.scrollIntoView()}>{language.dictionary.contact}</a>
                 </NavItem>
                 <NavItem>
+                    <a href="/cv.pdf" target="_blank">CV</a>
+                </NavItem>
+                <NavItem>
                     <img src={uk} onClick={() => language.setUserLanguage("EN")} alt="en" />
                 </NavItem>
                 <NavItem>
