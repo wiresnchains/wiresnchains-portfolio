@@ -1,4 +1,5 @@
 @use "../settings/sizing.scss";
+@use "../settings/timing.scss";
 
 .card {
     background: #fff;
@@ -24,7 +25,8 @@
 
         &:hover {
             .hover {
-                display: flex;
+                visibility: visible;
+                opacity: 1;
             }
         }
 
@@ -37,9 +39,12 @@
             background: rgb(#000, 0.5);
             pointer-events: none;
             user-select: none;
-            display: none;
+            display: flex;
             justify-content: center;
             align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity timing.$anim-time, visibility timing.$anim-time;
         }
     }
 }
