@@ -57,7 +57,7 @@ const dictionaryList: { [key: string]: ILanguageDictionary } = {
 
         // Projects
         v9desc: "My own interpreted scripting language designed for static & strict typing",
-        emDesc: "RPG game with infinite mining generation",
+        emDesc: "RPG game with infinite mine generation",
         auroraDesc: "An RPG game server in GTA 5 multiplayer",
         waveDesc: "Lightweight library for frontend state management",
 
