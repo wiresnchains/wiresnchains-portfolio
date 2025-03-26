@@ -20,6 +20,7 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity timing.$anim-time, visibility timing.$anim-time;
+    text-align: left;
 
     &.show {
         visibility: visible;
