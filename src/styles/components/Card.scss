@@ -4,7 +4,7 @@
 .card {
     background: #fff;
     padding: sizing.$item-spacing * 4;
-    width: 30rem;
+    width: calc(50% - sizing.$item-spacing);
     display: flex;
     flex-wrap: wrap;
     gap: sizing.$item-spacing;
