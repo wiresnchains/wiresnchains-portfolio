@@ -5,8 +5,8 @@
     gap: sizing.$item-spacing;
     flex-wrap: wrap;
 
-    &.nowrap {
-        flex-wrap: nowrap;
+    &.no-wrap {
+        flex-wrap: nowrap !important;
 
         > * {
             width: 100%;
