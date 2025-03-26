@@ -41,6 +41,9 @@ export function Footer({ fixed }: { fixed?: boolean }) {
                     <h5>{language.dictionary.otherLinks}</h5>
                 </FooterItem>
                 <FooterItem>
+                    <a href="https://www.linkedin.com/in/dgrachov/" target="_blank">LinkedIn</a>
+                </FooterItem>
+                <FooterItem>
                     <a href="https://github.com/wiresnchains/" target="_blank">GitHub</a>
                 </FooterItem>
             </FooterGroup>
