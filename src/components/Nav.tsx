@@ -57,10 +57,10 @@ export function Navbar({ aboutMe, tools, projects, education, contact }: { about
                     <a onClick={() => aboutMe.current?.scrollIntoView()}>{language.dictionary.aboutMe}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => tools.current?.scrollIntoView()}>{language.dictionary.tools}</a>
+                    <a onClick={() => projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>
+                    <a onClick={() => tools.current?.scrollIntoView()}>{language.dictionary.tools}</a>
                 </NavItem>
                 <NavItem>
                     <a onClick={() => education.current?.scrollIntoView()}>{language.dictionary.education}</a>
