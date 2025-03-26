@@ -7,10 +7,6 @@
 
     &.no-wrap {
         flex-wrap: nowrap !important;
-
-        > * {
-            width: 100%;
-        }
     }
 
     &.center {
