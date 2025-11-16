@@ -49,7 +49,7 @@ export function Footer({ fixed }: { fixed?: boolean }) {
             </FooterGroup>
             <FooterGroup>
                 <FooterItem>
-                    <p>{language.dictionary.contact}: <a href="mailto:dgrachov@icloud.com">dgrachov@icloud.com</a></p>
+                    <p>{language.dictionary.contact}: <a href="mailto:dgrachovsd@gmail.com">dgrachovsd@gmail.com</a></p>
                 </FooterItem>
             </FooterGroup>
             <FooterGroup>
