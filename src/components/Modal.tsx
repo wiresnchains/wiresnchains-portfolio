@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
+import clsx from "clsx";
 import { FiX } from "react-icons/fi";
 
 import { useLanguage } from "../hooks/LanguageProvider";
@@ -6,39 +7,46 @@ import { ContactForm } from "./Form";
 
 import "../styles/components/Modal.scss";
 
-type ModelCloseEventHandler = () => any;
+interface ModalProps {
+    show: boolean;
+    children?: ReactNode;
+}
 
-export function Modal({ show, children }: { show: boolean, children: ReactNode }) {
-    const [className, setClassName] = useState("modal");
-
-    useEffect(() => {
-        setClassName(show ? "modal show" : "modal");
-    }, [show]);
-
+export function Modal(props: ModalProps) {
     return (
-        <div className={className}>
+        <div className={clsx("modal", props.show && "show")}>
             <div className="modal-window">
-                {children}
+                {props.children}
             </div>
         </div>
     );
 }
 
-export function ModalHeader({ onClose, children }: { onClose: ModelCloseEventHandler, children: ReactNode }) {
+interface ModalHeaderProps {
+    onClose(): void;
+    children?: ReactNode;
+}
+
+export function ModalHeader(props: ModalHeaderProps) {
     return (
         <div className="modal-header">
-            {children}
-            <button className="modal-close" onClick={onClose}><FiX /></button>
+            {props.children}
+            <button className="modal-close" onClick={props.onClose}><FiX /></button>
         </div>
     );
 }
 
-export function ContactModal({ show, onClose }: { show: boolean, onClose: ModelCloseEventHandler }) {
+interface ContactModalProps {
+    show: boolean;
+    onClose(): void;
+}
+
+export function ContactModal(props: ContactModalProps) {
     const language = useLanguage();
 
     return (
-        <Modal show={show}>
-            <ModalHeader onClose={onClose}>
+        <Modal show={props.show}>
+            <ModalHeader onClose={props.onClose}>
                 <h3>{language.dictionary.contact}</h3>
                 <p className="muted">{language.dictionary.contactDescription}</p>
             </ModalHeader>

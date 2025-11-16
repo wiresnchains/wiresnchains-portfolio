@@ -1,41 +1,43 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
+import clsx from "clsx";
 
 import { useLanguage } from "../hooks/LanguageProvider";
 
 import "../styles/components/Footer.scss";
 
-export function FooterGroup({ children }: { children: ReactNode }) {
+interface FooterGroupProps {
+    children?: ReactNode;
+}
+
+export function FooterGroup(props: FooterGroupProps) {
     return (
         <ul className="footer-group">
-            {children}
+            {props.children}
         </ul>
     );
 }
 
-export function FooterItem({ children }: { children: ReactNode }) {
+interface FooterItemProps {
+    children?: ReactNode;
+}
+
+export function FooterItem(props: FooterItemProps) {
     return (
         <li className="footer-item">
-            {children}
+            {props.children}
         </li>
     );
 }
 
-export function Footer({ fixed }: { fixed?: boolean }) {
+interface FooterProps {
+    fixed?: boolean;
+}
+
+export function Footer(props: FooterProps) {
     const language = useLanguage();
 
-    let [className, setClassName] = useState("footer");
-
-    useEffect(() => {
-        let newClassName = className;
-
-        if (fixed)
-            newClassName += " fixed";
-
-        setClassName(newClassName);
-    }, [fixed]);
-
     return (
-        <footer className={className}>
+        <footer className={clsx("footer", props.fixed && "fixed")}>
             <FooterGroup>
                 <FooterItem>
                     <h5>{language.dictionary.otherLinks}</h5>

@@ -3,18 +3,26 @@ import { FiChevronDown } from "react-icons/fi";
 
 import "../styles/components/Hero.scss";
 
-export function Hero({ children }: { children: ReactNode }) {
+interface HeroProps {
+    children?: ReactNode;
+}
+
+export function Hero(props: HeroProps) {
     return (
         <section className="hero">
             <div className="hero-content">
-                {children}
+                {props.children}
             </div>
         </section>
     );
 }
 
-export function ScrollIndicator({ onClick }: { onClick?: () => any }) {
+interface ScrollIndicatorProps {
+    onClick?(): void;
+}
+
+export function ScrollIndicator(props: ScrollIndicatorProps) {
     return (
-        <FiChevronDown className="scroll-indicator" onClick={onClick} />
+        <FiChevronDown className="scroll-indicator" onClick={props.onClick} />
     );
 }

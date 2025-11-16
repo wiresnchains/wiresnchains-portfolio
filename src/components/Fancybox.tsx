@@ -1,10 +1,16 @@
 import { useRef, useEffect, ReactNode } from "react";
-
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import { OptionsType } from "@fancyapps/ui/types/Fancybox/options";
+
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-export function Fancybox(props: { delegate?: string, options?: Partial<OptionsType>, children: ReactNode }) {
+interface FancyboxProps {
+    delegate?: string,
+    options?: Partial<OptionsType>,
+    children?: ReactNode;
+}
+
+export function Fancybox(props: FancyboxProps) {
     const containerRef = useRef(null);
 
     useEffect(() => {

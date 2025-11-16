@@ -1,50 +1,71 @@
-import { ChangeEventHandler, HTMLInputTypeAttribute, MouseEventHandler, ReactNode, useState } from "react";
-
+import { forwardRef, HTMLInputTypeAttribute, MouseEventHandler, ReactNode, useRef, useState } from "react";
+import clsx from "clsx";
+import { Alert } from "./Alert";
 import { useLanguage } from "../hooks/LanguageProvider";
 
 import "../styles/components/Form.scss";
-import { Alert } from "./Alert";
 
-export function Form({ children }: { children: ReactNode }) {
+interface FormProps { 
+    children?: ReactNode;
+}
+
+export function Form(props: FormProps) {
     return (
         <div className="form">
-            {children}
+            {props.children}
         </div>
     );
 }
 
-export function FormRow({ children }: { children: ReactNode }) {
+interface FormRowProps { 
+    children?: ReactNode;
+}
+
+export function FormRow(props: FormRowProps) {
     return (
         <div className="form-row">
-            {children}
+            {props.children}
         </div>
     );
 }
 
-export function Button({ type, onClick, children }: { type: "primary" | "secondary", onClick?: MouseEventHandler<HTMLButtonElement>, children: ReactNode }) {
+interface ButtonProps {
+    type: "primary" | "secondary";
+    onClick?: MouseEventHandler<HTMLButtonElement>;
+    children?: ReactNode;
+}
+
+export function Button(props: ButtonProps) {
     return (
-        <button className={"btn btn-" + type} onClick={onClick}>
-            {children}
+        <button className={clsx("btn", `btn-${props.type}`)} onClick={props.onClick}>
+            {props.children}
         </button>
     );
 }
 
-export function Input({ id, type, placeholder, value, onChange }: { id?: string, type?: HTMLInputTypeAttribute, placeholder?: string, value?: string | number, onChange?: ChangeEventHandler<HTMLInputElement> }) {
-    return (
-        <input className="textbox" id={id} type={type} placeholder={placeholder} value={value} onChange={onChange} />
-    );
+interface InputProps {
+    id?: string;
+    type?: HTMLInputTypeAttribute;
+    placeholder?: string;
 }
 
-export function Textarea({ id, placeholder, value, onChange }: { id?: string, placeholder?: string, value?: string | number, onChange?: ChangeEventHandler<HTMLTextAreaElement>  }) {
-    return (
-        <textarea className="textbox" id={id} placeholder={placeholder} value={value} onChange={onChange} />
-    );
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+    <input className="textbox" id={props.id} type={props.type} placeholder={props.placeholder} ref={ref} />
+));
+
+interface TextareaProps {
+    id?: string;
+    placeholder?: string;
 }
+
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => (
+    <textarea className="textbox" id={props.id} placeholder={props.placeholder} ref={ref} />
+));
 
 export function ContactForm() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const nameInputRef = useRef<HTMLInputElement>(null);
+    const emailInputRef = useRef<HTMLInputElement>(null);
+    const messageInputRef = useRef<HTMLTextAreaElement>(null);
     const [error, setError] = useState<string | undefined>();
     const [success, setSuccess] = useState<string | undefined>();
 
@@ -53,15 +74,24 @@ export function ContactForm() {
     return (
         <Form>
             <FormRow>
-                <Input type="text" placeholder={language.dictionary.name} value={name} onChange={(e) => setName(e.target.value)} />
-                <Input type="email" placeholder={language.dictionary.email} value={email} onChange={(e) => setEmail(e.target.value)}  />
+                <Input type="text" placeholder={language.dictionary.name} ref={nameInputRef} />
+                <Input type="email" placeholder={language.dictionary.email} ref={emailInputRef}  />
             </FormRow>
             <FormRow>
-                <Textarea placeholder={language.dictionary.message} value={message} onChange={(e) => setMessage(e.target.value)}  />
+                <Textarea placeholder={language.dictionary.message} ref={messageInputRef} />
             </FormRow>
             <FormRow>
                 <Button type="primary" onClick={async () => {
-                    if (!name || !email || !message) {
+                    const nameInput = nameInputRef.current;
+                    const emailInput = emailInputRef.current;
+                    const messageInput = messageInputRef.current;
+
+                    if (!nameInput || !emailInput || !messageInput) {
+                        setError(language.dictionary.unknownError);
+                        return;
+                    }
+
+                    if (!nameInput.value || !emailInput.value || !messageInput.value) {
                         setError(language.dictionary.emptyFields);
                         return;
                     }
@@ -75,16 +105,16 @@ export function ContactForm() {
                                     fields: [
                                         {
                                             name: "Name",
-                                            value: name,
+                                            value: nameInput.value,
                                             inline: true
                                         },
                                         {
                                             name: "E-mail",
-                                            value: email
+                                            value: emailInput.value,
                                         },
                                         {
                                             name: "Message",
-                                            value: message
+                                            value: messageInput.value,
                                         }
                                     ],
                                     footer: {
@@ -105,9 +135,9 @@ export function ContactForm() {
                         if (!result.ok)
                             setError(language.dictionary.failedToSendMessage);
 
-                        setName("");
-                        setEmail("");
-                        setMessage("");
+                        nameInput.value = "";
+                        emailInput.value = "";
+                        messageInput.value = "";
 
                         setError(undefined);
                         setSuccess(language.dictionary.messageSent);

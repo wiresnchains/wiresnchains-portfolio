@@ -41,31 +41,31 @@ export function App() {
                 </Inline>
                 <ScrollIndicator onClick={() => { aboutMe.current?.scrollIntoView() }} />
             </Hero>
-            <Block refHook={aboutMe}>
+            <Block ref={aboutMe}>
                 <BlockTitle>{language.dictionary.aboutMe}</BlockTitle>
                 <FluidContainer center>
                     <AboutMe />
                 </FluidContainer>
             </Block>
-            <Block refHook={projects}>
+            <Block ref={projects}>
                 <BlockTitle>{language.dictionary.projects}</BlockTitle>
                 <FluidContainer center>
                     <Projects />
                 </FluidContainer>
             </Block>
-            <Block refHook={tools}>
+            <Block ref={tools}>
                 <BlockTitle>{language.dictionary.tools}</BlockTitle>
                 <FluidContainer center>
                     <Experience />
                 </FluidContainer>
             </Block>
-            <Block refHook={education}>
+            <Block ref={education}>
                 <BlockTitle>{language.dictionary.education}</BlockTitle>
                 <FluidContainer center>
                     <Education />
                 </FluidContainer>
             </Block>
-            <Block refHook={contact}>
+            <Block ref={contact}>
                 <BlockTitle>{language.dictionary.contact}</BlockTitle>
                 <FluidContainer center>
                     <ContactForm />

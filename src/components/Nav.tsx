@@ -1,50 +1,76 @@
-import { MutableRefObject, ReactNode, useState } from "react";
+import { ReactNode, RefObject, useEffect, useState } from "react";
+import clsx from "clsx";
 
 import { useLanguage } from "../hooks/LanguageProvider";
-
-import "../styles/components/Nav.scss";
 
 import uk from "../assets/images/uk.webp";
 import nl from "../assets/images/nl.webp";
 
-export function NavGroup({ children }: { children: ReactNode }) {
+import "../styles/components/Nav.scss";
+
+interface NavGroupProps {
+    children?: ReactNode;
+}
+
+export function NavGroup(props: NavGroupProps) {
     return (
         <ul className="nav-group">
-            {children}
+            {props.children}
         </ul>
     );
 }
 
-export function NavItem({ children }: { children: ReactNode }) {
+interface NavItemProps {
+    children?: ReactNode;
+}
+
+export function NavItem(props: NavItemProps) {
     return (
         <li className="nav-item">
-            {children}
+            {props.children}
         </li>
     );
 }
 
-export function Nav({ children }: { children: ReactNode }) {
-    const [className, setClassName] = useState("nav");
+interface NavProps {
+    children?: ReactNode;
+}
 
-    window.addEventListener("scroll", () => {
-        let newClassName = "nav";
+export function Nav(props: NavProps) {
+    const [showBackground, setShowBackground] = useState(false);
 
-        if (window.scrollY > 1)
-            newClassName += " show-background";
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowBackground(window.scrollY > 1);
+        };
 
-        setClassName(newClassName);
-    });
+        window.addEventListener("scroll", handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
-        <nav className={className}>
-            {children}
+        <nav className={clsx("nav", showBackground && "show-background")}>
+            {props.children}
         </nav>
     );
 }
 
-type NavRef = MutableRefObject<HTMLElement | null>;
+type SectionRef = RefObject<HTMLElement | null>;
 
-export function Navbar({ aboutMe, tools, projects, education, contact }: { aboutMe: NavRef, tools: NavRef, projects: NavRef, education: NavRef, contact: NavRef }) {
+interface NavbarProps {
+    aboutMe: SectionRef;
+    tools: SectionRef;
+    projects: SectionRef;
+    education: SectionRef;
+    contact: SectionRef;
+}
+
+export function Navbar(props: NavbarProps) {
     const language = useLanguage();
     
     return (
@@ -54,19 +80,19 @@ export function Navbar({ aboutMe, tools, projects, education, contact }: { about
                     <a href="#"><h3>{language.dictionary.heading}</h3></a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => aboutMe.current?.scrollIntoView()}>{language.dictionary.aboutMe}</a>
+                    <a onClick={() => props.aboutMe.current?.scrollIntoView()}>{language.dictionary.aboutMe}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>
+                    <a onClick={() => props.projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => tools.current?.scrollIntoView()}>{language.dictionary.tools}</a>
+                    <a onClick={() => props.tools.current?.scrollIntoView()}>{language.dictionary.tools}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => education.current?.scrollIntoView()}>{language.dictionary.education}</a>
+                    <a onClick={() => props.education.current?.scrollIntoView()}>{language.dictionary.education}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => contact.current?.scrollIntoView()}>{language.dictionary.contact}</a>
+                    <a onClick={() => props.contact.current?.scrollIntoView()}>{language.dictionary.contact}</a>
                 </NavItem>
                 <NavItem>
                     <a href="/cv.pdf" target="_blank">CV</a>

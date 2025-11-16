@@ -1,25 +1,18 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
+import clsx from "clsx";
 
 import "../styles/components/Inline.scss";
 
-export function Inline({ center, noWrap, children }: { center?: boolean, noWrap?: boolean, children: ReactNode }) {
-    const [className, setClassName] = useState("inline");
+interface InlineProps {
+    center?: boolean;
+    noWrap?: boolean;
+    children?: ReactNode;
+}
 
-    useEffect(() => {
-        let newClassName = "inline";
-
-        if (center)
-            newClassName += " center";
-
-        if (noWrap)
-            newClassName += " no-wrap";
-
-        setClassName(newClassName);
-    }, [center, noWrap]);
-
+export function Inline(props: InlineProps) {
     return (
-        <div className={className}>
-            {children}
+        <div className={clsx("inline", props.center && "center", props.noWrap && "no-wrap")}>
+            {props.children}
         </div>
     )
 }

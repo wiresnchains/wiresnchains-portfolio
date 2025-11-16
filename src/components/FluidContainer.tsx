@@ -1,23 +1,18 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
+import clsx from "clsx";
 
 import "../styles/components/FluidContainer.scss";
 
-export function FluidContainer({ center, children }: { center?: boolean, children: ReactNode }) {
-    const [className, setClassName] = useState("fluid-container");
+interface FluidContainerProps {
+    center?: boolean;
+    children?: ReactNode;
+}
 
-    useEffect(() => {
-        let newClassName = "fluid-container";
-
-        if (center)
-            newClassName += " center";
-
-        setClassName(newClassName);
-    }, [center]);
-
+export function FluidContainer(props: FluidContainerProps) {
     return (
-        <div className={className}>
+        <div className={clsx("fluid-container", props.center && "center")}>
             <div className="content">
-                {children}
+                {props.children}
             </div>
         </div>
     );

@@ -7,21 +7,34 @@ import { useLanguage } from "../hooks/LanguageProvider";
 
 import "../styles/components/Card.scss";
 
-export function Card({ children }: { children: ReactNode }) {
+interface CardProps {
+    children?: ReactNode;
+}
+
+export function Card(props: CardProps) {
     return (
         <div className="card">
-            {children}
+            {props.children}
         </div>
     );
 }
 
-export function CardGallery({ images }: { images: Array<{ src: string, alt: string }> }) {
+interface GalleryImage {
+    src: string;
+    alt: string;
+}
+
+interface CardGalleryProps {
+    images: Array<GalleryImage>;
+}
+
+export function CardGallery(props: CardGalleryProps) {
     const language = useLanguage();
 
     return (
         <div className="card-gallery">
             <Fancybox>
-                {images.map((image, i) => <a data-fancybox="gallery" href={image.src} key={image.src}>
+                {props.images.map((image, i) => <a data-fancybox="gallery" href={image.src} key={image.src}>
                     <img src={image.src} alt={image.alt} style={{ display: i == 0 ? "block" : "none" }} />
                 </a>)}
             </Fancybox>
