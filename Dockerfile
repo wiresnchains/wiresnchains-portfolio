@@ -2,7 +2,7 @@
 # Build website
 ##
 
-FROM node:25.3.0-alpine3.23 AS build
+FROM node:25.2-alpine3.23 AS build
 
 WORKDIR /app
 COPY . .
