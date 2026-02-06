@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
-import clsx from "clsx";
-import { FiX } from "react-icons/fi";
+import { ReactNode } from 'react';
+import clsx from 'clsx';
+import { FiX } from 'react-icons/fi';
 
-import { useLanguage } from "../hooks/LanguageProvider";
-import { ContactForm } from "./Form";
+import { ContactForm } from './Form';
 
-import "../styles/components/Modal.scss";
+import '../styles/components/Modal.scss';
+import { useTranslation } from '../hooks/use-locale';
 
 interface ModalProps {
     show: boolean;
@@ -14,10 +14,8 @@ interface ModalProps {
 
 export function Modal(props: ModalProps) {
     return (
-        <div className={clsx("modal", props.show && "show")}>
-            <div className="modal-window">
-                {props.children}
-            </div>
+        <div className={clsx('modal', props.show && 'show')}>
+            <div className="modal-window">{props.children}</div>
         </div>
     );
 }
@@ -31,7 +29,9 @@ export function ModalHeader(props: ModalHeaderProps) {
     return (
         <div className="modal-header">
             {props.children}
-            <button className="modal-close" onClick={props.onClose}><FiX /></button>
+            <button className="modal-close" onClick={props.onClose}>
+                <FiX />
+            </button>
         </div>
     );
 }
@@ -42,13 +42,13 @@ interface ContactModalProps {
 }
 
 export function ContactModal(props: ContactModalProps) {
-    const language = useLanguage();
+    const translation = useTranslation();
 
     return (
         <Modal show={props.show}>
             <ModalHeader onClose={props.onClose}>
-                <h3>{language.dictionary.contact}</h3>
-                <p className="muted">{language.dictionary.contactDescription}</p>
+                <h3>{translation.navigation.contact}</h3>
+                <p className="muted">{translation.contantForm.description}</p>
             </ModalHeader>
             <ContactForm />
         </Modal>

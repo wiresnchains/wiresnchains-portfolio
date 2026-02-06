@@ -1,16 +1,15 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { LocaleProvider } from './hooks/use-locale';
 
-import { LanguageProvider } from "./hooks/LanguageProvider";
+import { App } from './App';
 
-import { App } from "./App";
+import './styles/style.scss';
 
-import "./styles/style.scss";
-
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <LanguageProvider>
+        <LocaleProvider>
             <App />
-        </LanguageProvider>
+        </LocaleProvider>
     </StrictMode>
 );

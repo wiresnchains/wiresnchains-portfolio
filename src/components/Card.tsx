@@ -1,22 +1,18 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { Fancybox } from "./Fancybox";
-import { Button } from "./Form";
+import { Fancybox } from './Fancybox';
+import { Button } from './Form';
 
-import { useLanguage } from "../hooks/LanguageProvider";
+import { useTranslation } from '../hooks/use-locale';
 
-import "../styles/components/Card.scss";
+import '../styles/components/Card.scss';
 
 interface CardProps {
     children?: ReactNode;
 }
 
 export function Card(props: CardProps) {
-    return (
-        <div className="card">
-            {props.children}
-        </div>
-    );
+    return <div className="card">{props.children}</div>;
 }
 
 interface GalleryImage {
@@ -29,17 +25,19 @@ interface CardGalleryProps {
 }
 
 export function CardGallery(props: CardGalleryProps) {
-    const language = useLanguage();
+    const translation = useTranslation();
 
     return (
         <div className="card-gallery">
             <Fancybox>
-                {props.images.map((image, i) => <a data-fancybox="gallery" href={image.src} key={image.src}>
-                    <img src={image.src} alt={image.alt} style={{ display: i == 0 ? "block" : "none" }} />
-                </a>)}
+                {props.images.map((image, i) => (
+                    <a data-fancybox="gallery" href={image.src} key={image.src}>
+                        <img src={image.src} alt={image.alt} style={{ display: i == 0 ? 'block' : 'none' }} />
+                    </a>
+                ))}
             </Fancybox>
             <div className="hover">
-                <Button type="primary">{language.dictionary.viewGallery}</Button>
+                <Button type="primary">{translation.common.learnMore}</Button>
             </div>
         </div>
     );

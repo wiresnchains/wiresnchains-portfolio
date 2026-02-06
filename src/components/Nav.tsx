@@ -1,42 +1,24 @@
-import { ReactNode, RefObject, useEffect, useState } from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import { type RefObject, useEffect, useState } from 'react';
 
-import { useLanguage } from "../hooks/LanguageProvider";
+import { useSetLocale, useTranslation } from '../hooks/use-locale';
 
-import uk from "../assets/images/uk.webp";
-import nl from "../assets/images/nl.webp";
+import { BaseParentComponent } from '../types';
 
-import "../styles/components/Nav.scss";
+import uk from '../assets/images/uk.webp';
+import nl from '../assets/images/nl.webp';
 
-interface NavGroupProps {
-    children?: ReactNode;
+import '../styles/components/Nav.scss';
+
+export function NavGroup(props: BaseParentComponent) {
+    return <ul className="nav-group">{props.children}</ul>;
 }
 
-export function NavGroup(props: NavGroupProps) {
-    return (
-        <ul className="nav-group">
-            {props.children}
-        </ul>
-    );
+export function NavItem(props: BaseParentComponent) {
+    return <li className="nav-item">{props.children}</li>;
 }
 
-interface NavItemProps {
-    children?: ReactNode;
-}
-
-export function NavItem(props: NavItemProps) {
-    return (
-        <li className="nav-item">
-            {props.children}
-        </li>
-    );
-}
-
-interface NavProps {
-    children?: ReactNode;
-}
-
-export function Nav(props: NavProps) {
+export function Nav(props: BaseParentComponent) {
     const [showBackground, setShowBackground] = useState(false);
 
     useEffect(() => {
@@ -44,20 +26,16 @@ export function Nav(props: NavProps) {
             setShowBackground(window.scrollY > 1);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
         handleScroll();
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-    return (
-        <nav className={clsx("nav", showBackground && "show-background")}>
-            {props.children}
-        </nav>
-    );
+    return <nav className={clsx('nav', showBackground && 'show-background')}>{props.children}</nav>;
 }
 
 type SectionRef = RefObject<HTMLElement | null>;
@@ -71,37 +49,42 @@ interface NavbarProps {
 }
 
 export function Navbar(props: NavbarProps) {
-    const language = useLanguage();
-    
+    const translation = useTranslation();
+    const setLocale = useSetLocale();
+
     return (
         <Nav>
             <NavGroup>
                 <NavItem>
-                    <a href="#"><h3>{language.dictionary.heading}</h3></a>
+                    <a href="#">
+                        <h3>{translation.hero.heading}</h3>
+                    </a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => props.aboutMe.current?.scrollIntoView()}>{language.dictionary.aboutMe}</a>
+                    <a onClick={() => props.aboutMe.current?.scrollIntoView()}>{translation.navigation.aboutMe}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => props.projects.current?.scrollIntoView()}>{language.dictionary.projects}</a>
+                    <a onClick={() => props.projects.current?.scrollIntoView()}>{translation.navigation.projects}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => props.tools.current?.scrollIntoView()}>{language.dictionary.tools}</a>
+                    <a onClick={() => props.tools.current?.scrollIntoView()}>{translation.navigation.tools}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => props.education.current?.scrollIntoView()}>{language.dictionary.education}</a>
+                    <a onClick={() => props.education.current?.scrollIntoView()}>{translation.navigation.education}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => props.contact.current?.scrollIntoView()}>{language.dictionary.contact}</a>
+                    <a onClick={() => props.contact.current?.scrollIntoView()}>{translation.navigation.contact}</a>
                 </NavItem>
                 <NavItem>
-                    <a href="/cv.pdf" target="_blank">CV</a>
+                    <a href="/cv.pdf" target="_blank">
+                        CV
+                    </a>
                 </NavItem>
                 <NavItem>
-                    <img src={uk} onClick={() => language.setUserLanguage("EN")} alt="en" />
+                    <img src={uk} onClick={() => setLocale('EN')} alt="en" />
                 </NavItem>
                 <NavItem>
-                    <img src={nl} onClick={() => language.setUserLanguage("NL")} alt="nl" />
+                    <img src={nl} onClick={() => setLocale('NL')} alt="nl" />
                 </NavItem>
             </NavGroup>
         </Nav>

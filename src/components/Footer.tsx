@@ -1,32 +1,14 @@
-import { ReactNode } from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import { useTranslation } from '../hooks/use-locale';
+import { BaseParentComponent } from '../types';
+import '../styles/components/Footer.scss';
 
-import { useLanguage } from "../hooks/LanguageProvider";
-
-import "../styles/components/Footer.scss";
-
-interface FooterGroupProps {
-    children?: ReactNode;
+export function FooterGroup(props: BaseParentComponent) {
+    return <ul className="footer-group">{props.children}</ul>;
 }
 
-export function FooterGroup(props: FooterGroupProps) {
-    return (
-        <ul className="footer-group">
-            {props.children}
-        </ul>
-    );
-}
-
-interface FooterItemProps {
-    children?: ReactNode;
-}
-
-export function FooterItem(props: FooterItemProps) {
-    return (
-        <li className="footer-item">
-            {props.children}
-        </li>
-    );
+export function FooterItem(props: BaseParentComponent) {
+    return <li className="footer-item">{props.children}</li>;
 }
 
 interface FooterProps {
@@ -34,29 +16,38 @@ interface FooterProps {
 }
 
 export function Footer(props: FooterProps) {
-    const language = useLanguage();
+    const translation = useTranslation();
 
     return (
-        <footer className={clsx("footer", props.fixed && "fixed")}>
+        <footer className={clsx('footer', props.fixed && 'fixed')}>
             <FooterGroup>
                 <FooterItem>
-                    <h5>{language.dictionary.otherLinks}</h5>
+                    <h5>{translation.footer.otherLinks}</h5>
                 </FooterItem>
                 <FooterItem>
-                    <a href="https://www.linkedin.com/in/dgrachov/" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/dgrachov/" target="_blank">
+                        LinkedIn
+                    </a>
                 </FooterItem>
                 <FooterItem>
-                    <a href="https://github.com/wiresnchains/" target="_blank">GitHub</a>
+                    <a href="https://github.com/wiresnchains/" target="_blank">
+                        GitHub
+                    </a>
                 </FooterItem>
             </FooterGroup>
             <FooterGroup>
                 <FooterItem>
-                    <p>{language.dictionary.contact}: <a href="mailto:dgrachovsd@gmail.com">dgrachovsd@gmail.com</a></p>
+                    <p>
+                        {translation.navigation.contact}:{' '}
+                        <a href="mailto:dgrachov@student.scalda.nl">dgrachov@student.scalda.nl</a>
+                    </p>
                 </FooterItem>
             </FooterGroup>
             <FooterGroup>
                 <FooterItem>
-                    <p>&copy; {new Date().getFullYear()} Danya Grachov</p>
+                    <p>
+                        &copy; {new Date().getFullYear()} {translation.hero.heading}
+                    </p>
                 </FooterItem>
             </FooterGroup>
         </footer>

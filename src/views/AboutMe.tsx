@@ -1,14 +1,14 @@
-import { Inline } from "../components/Inline";
+import { Inline } from '../components/Inline';
+import { Fancybox } from '../components/Fancybox';
 
-import { useLanguage } from "../hooks/LanguageProvider";
+import { useTranslation } from '../hooks/use-locale';
 
-import profile from "../assets/images/profile.webp";
+import profile from '../assets/images/profile.webp';
 
-import "../styles/views/AboutMe.scss";
-import { Fancybox } from "../components/Fancybox";
+import '../styles/views/AboutMe.scss';
 
 export function AboutMe() {
-    const language = useLanguage();
+    const translation = useTranslation();
 
     return (
         <Inline noWrap>
@@ -19,11 +19,11 @@ export function AboutMe() {
             </Fancybox>
 
             <div className="about-me-block">
-                <h3>{language.dictionary.aboutMeHeading}</h3>
-                <p>{language.dictionary.aboutMeParagraph1}</p>
-                <p>{language.dictionary.aboutMeParagraph2}</p>
-                <p>{language.dictionary.aboutMeParagraph3}</p>
-                <p>{language.dictionary.aboutMeParagraph4}</p>
+                <h3>{translation.aboutMe.heading}</h3>
+
+                {translation.aboutMe.paragraphs.map((text, i) => (
+                    <p key={i}>{text}</p>
+                ))}
             </div>
         </Inline>
     );

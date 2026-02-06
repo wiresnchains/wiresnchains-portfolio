@@ -1,24 +1,26 @@
-import { Inline } from "../components/Inline";
-import { Tag } from "../components/Tag";
-import { useLanguage } from "../hooks/LanguageProvider";
+import { Inline } from '../components/Inline';
+import { Tag } from '../components/Tag';
+import { useTranslation } from '../hooks/use-locale';
 
 export function Experience() {
-    const language = useLanguage();
-    
+    const translation = useTranslation();
+
     return (
         <Inline center>
-            <Tag label={language.dictionary.cppExp}>C++</Tag>
-            <Tag label={language.dictionary.csExp}>C#</Tag>
-            <Tag label={language.dictionary.javaExp}>Java</Tag>
-            <Tag label={language.dictionary.luaExp}>Lua/Luau</Tag>
-            <Tag label={language.dictionary.jsExp}>NodeJS</Tag>
-            <Tag label={language.dictionary.reactExp}>React</Tag>
-            <Tag label={language.dictionary.scssExp}>SCSS</Tag>
-            <Tag label={language.dictionary.tsExp}>TypeScript</Tag>
-            <Tag label={language.dictionary.phpDev}>PHP</Tag>
-            <Tag label={language.dictionary.sqlExp}>SQL (MySQL)</Tag>
-            <Tag label={language.dictionary.dockerExp}>Docker</Tag>
-            <Tag label={language.dictionary.gitExp}>Git</Tag>
+            <Tag label={`<1 ${translation.common.year}`}>Go</Tag>
+            <Tag label={`3+ ${translation.common.year}`}>C++</Tag>
+            <Tag label={`<1 ${translation.common.year}`}>C#</Tag>
+            <Tag label={`2+ ${translation.common.year}`}>Java</Tag>
+            <Tag label={`4+ ${translation.common.year}`}>Lua/Luau</Tag>
+            <Tag label={`<1 ${translation.common.year}`}>PHP</Tag>
+            <Tag label={`3+ ${translation.common.year}`}>NodeJS</Tag>
+            <Tag label={`2+ ${translation.common.year}`}>TypeScript</Tag>
+            <Tag label={`1+ ${translation.common.year}`}>React</Tag>
+            <Tag label={`1+ ${translation.common.year}`}>SCSS</Tag>
+            <Tag label={`1+ ${translation.common.year}`}>Docker</Tag>
+            <Tag label={`3+ ${translation.common.year}`}>Git</Tag>
+            <Tag label={`<1 ${translation.common.year}`}>Linux</Tag>
+            <Tag label={`2+ ${translation.common.year}`}>MySQL</Tag>
         </Inline>
     );
 }
