@@ -32,7 +32,7 @@ export function CardGallery(props: CardGalleryProps) {
             <Fancybox>
                 {props.images.map((image, i) => (
                     <a data-fancybox="gallery" href={image.src} key={image.src}>
-                        <img src={image.src} alt={image.alt} style={{ display: i == 0 ? 'block' : 'none' }} />
+                        {i === 0 && <img src={image.src} alt={image.alt} loading="lazy" />}
                     </a>
                 ))}
             </Fancybox>
