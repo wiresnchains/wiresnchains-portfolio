@@ -4,7 +4,7 @@ export const NL: Locale = {
     common: {
         year: 'jaar',
         years: 'jaar',
-        learnMore: 'Bekijk meer...',
+        learnMore: 'Lees meer',
         june: 'Juni',
         july: 'Juli',
         august: 'Augustus',
