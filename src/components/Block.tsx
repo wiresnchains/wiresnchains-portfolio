@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { forwardRef } from 'react';
 import { BaseParentComponent } from '../types';
-import '../styles/components/block.scss';
+import '../styles/components/Block.scss';
 
 export const Block = forwardRef<HTMLElement, BaseParentComponent>((props, ref) => (
     <section className={clsx('block', props.utility)} ref={ref}>

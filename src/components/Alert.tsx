@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { BaseParentComponent } from '../types';
-import '../styles/components/alert.scss';
+import '../styles/components/Alert.scss';
 
 export interface AlertProps extends BaseParentComponent {
     type: 'success' | 'error';
