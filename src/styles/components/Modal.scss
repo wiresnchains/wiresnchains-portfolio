@@ -1,9 +1,13 @@
-@use "../settings/sizing.scss";
-@use "../settings/timing.scss";
+@use '../settings/sizing.scss';
+@use '../settings/timing.scss';
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .modal {
@@ -19,7 +23,9 @@
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    transition: opacity timing.$anim-time, visibility timing.$anim-time;
+    transition:
+        opacity timing.$anim-time,
+        visibility timing.$anim-time;
     text-align: left;
 
     &.show {
@@ -37,13 +43,13 @@
             max-width: calc(100% - 2rem);
         }
 
+        &:last-child {
+            margin-bottom: 0;
+        }
+
         .modal-header {
             position: relative;
             margin-bottom: sizing.$item-spacing;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
 
             .modal-close {
                 border: none;
