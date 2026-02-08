@@ -20,7 +20,7 @@ export interface Locale {
         aboutMe: string;
         projects: string;
         education: string;
-        tools: string;
+        experience: string;
     };
 
     contantForm: {

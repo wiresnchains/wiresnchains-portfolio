@@ -17,7 +17,7 @@ export function App() {
 
     const aboutMe = useRef<HTMLDivElement | null>(null);
     const projects = useRef<HTMLDivElement | null>(null);
-    const tools = useRef<HTMLDivElement | null>(null);
+    const experience = useRef<HTMLDivElement | null>(null);
     const education = useRef<HTMLDivElement | null>(null);
     const contact = useRef<HTMLDivElement | null>(null);
 
@@ -25,13 +25,19 @@ export function App() {
 
     return (
         <>
-            <Navbar aboutMe={aboutMe} tools={tools} projects={projects} education={education} contact={contact} />
+            <Navbar
+                aboutMe={aboutMe}
+                experience={experience}
+                projects={projects}
+                education={education}
+                contact={contact}
+            />
 
             <Hero setShowContact={setShowContact} aboutMeRef={aboutMe} />
 
             <AboutMe ref={aboutMe} />
             <Projects ref={projects} />
-            <Experience ref={tools} />
+            <Experience ref={experience} />
             <Education ref={education} />
             <Contact ref={contact} />
 

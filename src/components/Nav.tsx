@@ -39,7 +39,7 @@ export type SectionRef = RefObject<HTMLElement | null>;
 
 export interface NavbarProps extends BaseComponent {
     aboutMe: SectionRef;
-    tools: SectionRef;
+    experience: SectionRef;
     projects: SectionRef;
     education: SectionRef;
     contact: SectionRef;
@@ -64,7 +64,9 @@ export function Navbar(props: NavbarProps) {
                     <a onClick={() => props.projects.current?.scrollIntoView()}>{translation.navigation.projects}</a>
                 </NavItem>
                 <NavItem>
-                    <a onClick={() => props.tools.current?.scrollIntoView()}>{translation.navigation.tools}</a>
+                    <a onClick={() => props.experience.current?.scrollIntoView()}>
+                        {translation.navigation.experience}
+                    </a>
                 </NavItem>
                 <NavItem>
                     <a onClick={() => props.education.current?.scrollIntoView()}>{translation.navigation.education}</a>

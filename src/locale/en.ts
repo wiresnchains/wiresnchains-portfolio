@@ -22,7 +22,7 @@ export const EN: Locale = {
         aboutMe: 'About me',
         projects: 'Projects',
         education: 'Education',
-        tools: 'Tools',
+        experience: 'Experience',
     },
 
     contantForm: {

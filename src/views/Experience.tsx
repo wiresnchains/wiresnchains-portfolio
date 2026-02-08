@@ -9,7 +9,7 @@ export const Experience = forwardRef<HTMLDivElement>((_, ref) => {
 
     return (
         <Block ref={ref}>
-            <BlockTitle>{translation.navigation.tools}</BlockTitle>
+            <BlockTitle>{translation.navigation.experience}</BlockTitle>
 
             <FluidContainer center>
                 <div className="flex wrap center-x g-1">
