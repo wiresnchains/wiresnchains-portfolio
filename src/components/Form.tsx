@@ -43,6 +43,7 @@ export interface InputProps extends BaseComponent {
     id?: string;
     type?: HTMLInputTypeAttribute;
     placeholder?: string;
+    required?: boolean;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
@@ -51,6 +52,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
         id={props.id}
         type={props.type}
         placeholder={props.placeholder}
+        required={props.required}
         ref={ref}
     />
 ));
@@ -58,10 +60,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
 interface TextareaProps extends BaseComponent {
     id?: string;
     placeholder?: string;
+    required?: boolean;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => (
-    <textarea className={clsx('textbox', props.utility)} id={props.id} placeholder={props.placeholder} ref={ref} />
+    <textarea
+        className={clsx('textbox', props.utility)}
+        id={props.id}
+        placeholder={props.placeholder}
+        required={props.required}
+        ref={ref}
+    />
 ));
 
 export function ContactForm() {
@@ -143,11 +152,11 @@ export function ContactForm() {
     return (
         <Form onSubmit={submit}>
             <FormRow>
-                <Input type="text" placeholder={translation.contantForm.name} ref={nameInputRef} />
-                <Input type="email" placeholder={translation.contantForm.email} ref={emailInputRef} />
+                <Input type="text" placeholder={translation.contantForm.name} required ref={nameInputRef} />
+                <Input type="email" placeholder={translation.contantForm.email} required ref={emailInputRef} />
             </FormRow>
             <FormRow>
-                <Textarea placeholder={translation.contantForm.message} ref={messageInputRef} />
+                <Textarea placeholder={translation.contantForm.message} required ref={messageInputRef} />
             </FormRow>
             <FormRow>
                 <Button type="primary" submit>
