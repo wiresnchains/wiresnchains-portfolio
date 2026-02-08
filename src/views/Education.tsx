@@ -4,6 +4,7 @@ import { Button } from '../components/Form';
 import { Modal, ModalHeader } from '../components/Modal';
 import { Block, BlockTitle } from '../components/Block';
 import { FluidContainer } from '../components/FluidContainer';
+import { Table, TableData, TableHeader, TableRow } from '../components/Table';
 import { useTranslation } from '../hooks/use-locale';
 
 export const Education = forwardRef<HTMLDivElement>((_, ref) => {
@@ -67,28 +68,240 @@ export const Education = forwardRef<HTMLDivElement>((_, ref) => {
             <Modal show={showScaldaResults}>
                 <ModalHeader onClose={() => setShowScaldaResuts(false)}>
                     <h3>Scalda</h3>
-                    <p className="muted">Description</p>
+                    <p className="muted">{translation.education.notGraduatedYet}</p>
                 </ModalHeader>
+
+                <div className="flex vertical g-2">
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.scalda.phases.oriented}</h4>
+
+                        <Table>
+                            <thead>
+                                <TableRow>
+                                    <TableHeader>{translation.education.scalda.database}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.frontend}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.javaProgramming}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.softwareEngineering}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.scrum}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.careerOrientation}</TableHeader>
+                                </TableRow>
+                            </thead>
+                            <tbody>
+                                <TableRow>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.sufficient}</TableData>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.sufficient}</TableData>
+                                </TableRow>
+                            </tbody>
+                        </Table>
+                    </div>
+
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.scalda.phases.beginner}</h4>
+
+                        <Table>
+                            <thead>
+                                <TableRow>
+                                    <TableHeader>{translation.education.scalda.database}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.frontend}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.javaProgramming}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.softwareEngineering}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.scrum}</TableHeader>
+                                    <TableHeader>{translation.education.scalda.careerOrientation}</TableHeader>
+                                </TableRow>
+                            </thead>
+                            <tbody>
+                                <TableRow>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.sufficient}</TableData>
+                                    <TableData>{translation.education.scalda.result.good}</TableData>
+                                    <TableData>{translation.education.scalda.result.sufficient}</TableData>
+                                </TableRow>
+                            </tbody>
+                        </Table>
+                    </div>
+
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.scalda.phases.advanced}</h4>
+                        <p className="muted">{translation.education.notFinishedYet}</p>
+                    </div>
+
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.dutch}</h4>
+
+                        <Table>
+                            <thead>
+                                <TableRow>
+                                    <TableHeader>{translation.education.reading}</TableHeader>
+                                    <TableHeader>{translation.education.speaking}</TableHeader>
+                                    <TableHeader>{translation.education.writing}</TableHeader>
+                                </TableRow>
+                            </thead>
+                            <tbody>
+                                <TableRow>
+                                    <TableData>B1 (NT2)</TableData>
+                                    <TableData>B1 (NT2)</TableData>
+                                    <TableData>B1 (NT2)</TableData>
+                                </TableRow>
+                            </tbody>
+                        </Table>
+                    </div>
+
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.english}</h4>
+
+                        <Table>
+                            <thead>
+                                <TableRow>
+                                    <TableHeader>{translation.education.reading}</TableHeader>
+                                    <TableHeader>{translation.education.speaking}</TableHeader>
+                                    <TableHeader>{translation.education.writing}</TableHeader>
+                                </TableRow>
+                            </thead>
+                            <tbody>
+                                <TableRow>
+                                    <TableData>B1+</TableData>
+                                    <TableData>B1+</TableData>
+                                    <TableData>B1+</TableData>
+                                </TableRow>
+                            </tbody>
+                        </Table>
+
+                        <a href="/certificate-english.pdf" target="_blank">
+                            <Button type="primary">{translation.education.viewCertificate}</Button>
+                        </a>
+                    </div>
+
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.maths}</h4>
+                        <p className="muted">{translation.education.notFinishedYet}</p>
+                    </div>
+                </div>
             </Modal>
 
             <Modal show={showIskResults}>
                 <ModalHeader onClose={() => setShowIskResults(false)}>
                     <h3>ISK</h3>
-                    <p className="muted">Description</p>
+                    <p className="muted">{translation.education.graduated}</p>
                 </ModalHeader>
+
+                <div className="flex vertical g-2">
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.dutch}</h4>
+
+                        <Table>
+                            <thead>
+                                <TableRow>
+                                    <TableHeader>{translation.education.reading}</TableHeader>
+                                    <TableHeader>{translation.education.speaking}</TableHeader>
+                                    <TableHeader>{translation.education.writing}</TableHeader>
+                                </TableRow>
+                            </thead>
+                            <tbody>
+                                <TableRow>
+                                    <TableData>B1 (NT2)</TableData>
+                                    <TableData>B1 (NT2)</TableData>
+                                    <TableData>B1 (NT2)</TableData>
+                                </TableRow>
+                            </tbody>
+                        </Table>
+                    </div>
+
+                    <div className="flex vertical g-1">
+                        <h4>{translation.education.maths}</h4>
+
+                        <Table>
+                            <thead>
+                                <TableRow>
+                                    <TableHeader>{translation.education.maths}</TableHeader>
+                                    <TableHeader>{translation.education.calculations}</TableHeader>
+                                </TableRow>
+                            </thead>
+                            <tbody>
+                                <TableRow>
+                                    <TableData>3F</TableData>
+                                    <TableData>3F</TableData>
+                                </TableRow>
+                            </tbody>
+                        </Table>
+                    </div>
+                </div>
             </Modal>
 
             <Modal show={showJammResults}>
                 <ModalHeader onClose={() => setShowJammResults(false)}>
                     <h3>JAMM</h3>
-                    <p className="muted">Description</p>
+                    <p className="muted">{translation.education.graduated}</p>
                 </ModalHeader>
+
+                <div className="flex vertical g-2">
+                    <p>{translation.education.jamm.ukrainianEvaluationSystem}</p>
+
+                    <Table>
+                        <thead>
+                            <TableRow>
+                                <TableHeader>{translation.education.jamm.ukrainianLanguage}</TableHeader>
+                                <TableHeader>{translation.education.jamm.ukrainianLiterature}</TableHeader>
+                                <TableHeader>{translation.education.jamm.foreignLiterature}</TableHeader>
+                                <TableHeader>{translation.education.jamm.history}</TableHeader>
+                                <TableHeader>{translation.education.jamm.algebra}</TableHeader>
+                                <TableHeader>{translation.education.jamm.geometry}</TableHeader>
+                                <TableHeader>{translation.education.jamm.ict}</TableHeader>
+                            </TableRow>
+                        </thead>
+                        <tbody>
+                            <TableRow>
+                                <TableData>9</TableData>
+                                <TableData>9</TableData>
+                                <TableData>10</TableData>
+                                <TableData>9</TableData>
+                                <TableData>9</TableData>
+                                <TableData>9</TableData>
+                                <TableData>10</TableData>
+                            </TableRow>
+                        </tbody>
+                    </Table>
+
+                    <Table>
+                        <thead>
+                            <TableRow>
+                                <TableHeader>{translation.education.jamm.geography}</TableHeader>
+                                <TableHeader>{translation.education.jamm.biology}</TableHeader>
+                                <TableHeader>{translation.education.jamm.physics}</TableHeader>
+                                <TableHeader>{translation.education.jamm.chemistry}</TableHeader>
+                                <TableHeader>{translation.education.jamm.civicsAndLaw}</TableHeader>
+                                <TableHeader>{translation.education.jamm.healthEducation}</TableHeader>
+                                <TableHeader>{translation.education.jamm.art}</TableHeader>
+                            </TableRow>
+                        </thead>
+                        <tbody>
+                            <TableRow>
+                                <TableData>9</TableData>
+                                <TableData>9</TableData>
+                                <TableData>9</TableData>
+                                <TableData>8</TableData>
+                                <TableData>11</TableData>
+                                <TableData>11</TableData>
+                                <TableData>12</TableData>
+                            </TableRow>
+                        </tbody>
+                    </Table>
+
+                    <a href="/diploma-jamm.pdf" target="_blank">
+                        <Button type="primary">{translation.education.viewDiploma}</Button>
+                    </a>
+                </div>
             </Modal>
 
             <Modal show={showBisuResults}>
                 <ModalHeader onClose={() => setShowBisuResults(false)}>
                     <h3>BISU</h3>
-                    <p className="muted">Description</p>
+                    <p className="muted">{translation.education.graduated}</p>
                 </ModalHeader>
             </Modal>
         </>

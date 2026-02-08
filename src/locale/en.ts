@@ -59,4 +59,63 @@ export const EN: Locale = {
         gta5planet: 'RPG-server for GTA 5 multiplayer',
         endlessMines: 'RPG with infinite mine generation',
     },
+
+    education: {
+        notFinishedYet: 'Not finished yet',
+        notGraduatedYet: 'Currently enrolled',
+        graduated: 'Graduated',
+
+        maths: 'Maths',
+        calculations: 'Calculations',
+
+        dutch: 'Dutch',
+        english: 'English',
+        speaking: 'Speaking',
+        writing: 'Writing',
+        reading: 'Reading',
+
+        viewCertificate: 'View certificate',
+        viewDiploma: 'View diploma',
+
+        scalda: {
+            phases: {
+                oriented: 'Oriented Phase',
+                beginner: 'Beginner Phase',
+                advanced: 'Advanced Phase',
+            },
+
+            database: 'Databases',
+            frontend: 'Front-end',
+            javaProgramming: 'Java Programming (back-end)',
+            softwareEngineering: 'Software engineering',
+            scrum: 'Scrum',
+            careerOrientation: 'Career orientation',
+
+            result: {
+                good: 'Good (passed)',
+                sufficient: 'Sufficient (passed)',
+                fail: 'Failed',
+            },
+        },
+
+        jamm: {
+            ukrainianEvaluationSystem:
+                'In Ukraine, students are graded on a 12-point scale, with 12 being excellent, 7 the minimum passing mark, and anything below 7 considered a fail.',
+
+            ukrainianLanguage: 'Ukrainian language',
+            ukrainianLiterature: 'Ukrainian literature',
+            foreignLiterature: 'Foreign literature',
+            history: 'History',
+            algebra: 'Algebra',
+            geometry: 'Geomtry',
+            ict: 'ICT',
+            geography: 'Geography',
+            biology: 'Biology',
+            physics: 'Physics',
+            chemistry: 'Chemistry',
+            civicsAndLaw: 'Civics/Law',
+            healthEducation: 'Health education',
+            art: 'Art',
+        },
+    },
 } as const;

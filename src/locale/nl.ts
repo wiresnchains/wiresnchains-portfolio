@@ -59,4 +59,62 @@ export const NL: Locale = {
         gta5planet: 'RPG-server voor GTA 5 multiplayer',
         endlessMines: 'RPG met oneindige mijnen generatie',
     },
+
+    education: {
+        notFinishedYet: 'Nog niet afgerond',
+        notGraduatedYet: 'Nog bezig met opleiding',
+        graduated: 'Diploma behaald',
+        maths: 'Wiskunde',
+        calculations: 'Rekenen',
+
+        dutch: 'Nederlands',
+        english: 'Engels',
+        speaking: 'Spreken',
+        writing: 'Schrijven',
+        reading: 'Lezen',
+
+        viewCertificate: 'Certificaat bekijken',
+        viewDiploma: 'Diploma bekijken',
+
+        scalda: {
+            phases: {
+                oriented: 'Fase Oriënterend',
+                beginner: 'Fase Beginner',
+                advanced: 'Fase Gevorderd',
+            },
+
+            database: 'Databases',
+            frontend: 'Front-end',
+            javaProgramming: 'Java programmeren (back-end)',
+            softwareEngineering: 'Software engineering',
+            scrum: 'Scrum',
+            careerOrientation: 'Loopbaanorientatie',
+
+            result: {
+                good: 'Goed (behaald)',
+                sufficient: 'Voldoende (behaald)',
+                fail: 'Onvoldoende (niet behaald)',
+            },
+        },
+
+        jamm: {
+            ukrainianEvaluationSystem:
+                'In Oekraïne krijgen leerlingen cijfers van 1 tot 12, waarbij 12 uitstekend is, 7 het minimum is om te slagen, en alles onder 7 een onvoldoende is.',
+
+            ukrainianLanguage: 'Oekraïense taal',
+            ukrainianLiterature: 'Oekraïense literatuur',
+            foreignLiterature: 'Buitenlandse literatuur',
+            history: 'Geschiedenis',
+            algebra: 'Algebra',
+            geometry: 'Geometrie',
+            ict: 'ICT',
+            geography: 'Geografie',
+            biology: 'Biologie',
+            physics: 'Natuurkunde',
+            chemistry: 'Scheikunde',
+            civicsAndLaw: 'Jurisprudentie',
+            healthEducation: 'Gezondheidsvoorlichting',
+            art: 'Kunst',
+        },
+    },
 } as const;
