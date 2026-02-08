@@ -1,7 +1,8 @@
-@use "./settings/colors.scss";
-@use "./settings/fonts.scss";
-@use "./settings/timing.scss";
-@use "./settings/sizing.scss";
+@use './settings/colors.scss';
+@use './settings/fonts.scss';
+@use './settings/timing.scss';
+@use './settings/sizing.scss';
+@use './utility';
 
 :root {
     font-size: 14px;
@@ -24,12 +25,20 @@ button {
     cursor: pointer;
 }
 
-button, input, textarea, label {
+button,
+input,
+textarea,
+label {
     font-size: 1rem;
     display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: fonts.$headings;
 }
 

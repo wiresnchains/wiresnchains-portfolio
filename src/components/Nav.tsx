@@ -1,14 +1,11 @@
 import clsx from 'clsx';
 import { type RefObject, useEffect, useState } from 'react';
-
 import { useSetLocale, useTranslation } from '../hooks/use-locale';
-
-import { BaseParentComponent } from '../types';
+import { BaseComponent, BaseParentComponent } from '../types';
+import '../styles/components/Nav.scss';
 
 import uk from '../assets/images/uk.webp';
 import nl from '../assets/images/nl.webp';
-
-import '../styles/components/Nav.scss';
 
 export function NavGroup(props: BaseParentComponent) {
     return <ul className="nav-group">{props.children}</ul>;
@@ -38,9 +35,9 @@ export function Nav(props: BaseParentComponent) {
     return <nav className={clsx('nav', showBackground && 'show-background')}>{props.children}</nav>;
 }
 
-type SectionRef = RefObject<HTMLElement | null>;
+export type SectionRef = RefObject<HTMLElement | null>;
 
-interface NavbarProps {
+export interface NavbarProps extends BaseComponent {
     aboutMe: SectionRef;
     tools: SectionRef;
     projects: SectionRef;
@@ -53,7 +50,7 @@ export function Navbar(props: NavbarProps) {
     const setLocale = useSetLocale();
 
     return (
-        <Nav>
+        <Nav utility={props.utility}>
             <NavGroup>
                 <NavItem>
                     <a href="#">

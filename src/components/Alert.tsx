@@ -1,17 +1,11 @@
-import { ReactNode } from "react";
+import clsx from 'clsx';
+import { BaseParentComponent } from '../types';
+import '../styles/components/alert.scss';
 
-import "../styles/components/Alert.scss";
-import clsx from "clsx";
-
-interface AlertProps {
-    type: "success" | "error";
-    children?: ReactNode;
+export interface AlertProps extends BaseParentComponent {
+    type: 'success' | 'error';
 }
 
 export function Alert(props: AlertProps) {
-    return (
-        <span className={clsx("alert", `alert-${props.type}`)}>
-            {props.children}
-        </span>
-    );
+    return <span className={clsx('alert', `alert-${props.type}`, props.utility)}>{props.children}</span>;
 }

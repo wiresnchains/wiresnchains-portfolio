@@ -1,0 +1,47 @@
+@use './settings/sizing';
+
+.w-100 {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+
+    &.center-x {
+        justify-content: center;
+    }
+
+    &.center-y {
+        align-items: center;
+    }
+
+    &.vertical {
+        flex-direction: column;
+    }
+
+    &.flex-1 > * {
+        flex: 1;
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.g-1 {
+        gap: 0.5rem;
+    }
+
+    &.g-2 {
+        gap: 1rem;
+    }
+
+    &.g-3 {
+        gap: 2rem;
+    }
+
+    &.scale-mobile > * {
+        @media only screen and (max-width: sizing.$mobile-width-threshold) {
+            width: 100%;
+        }
+    }
+}

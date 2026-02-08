@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useTranslation } from '../hooks/use-locale';
-import { BaseParentComponent } from '../types';
+import { BaseComponent, BaseParentComponent } from '../types';
 import '../styles/components/Footer.scss';
 
 export function FooterGroup(props: BaseParentComponent) {
@@ -11,7 +11,7 @@ export function FooterItem(props: BaseParentComponent) {
     return <li className="footer-item">{props.children}</li>;
 }
 
-interface FooterProps {
+export interface FooterProps extends BaseComponent {
     fixed?: boolean;
 }
 
@@ -19,7 +19,7 @@ export function Footer(props: FooterProps) {
     const translation = useTranslation();
 
     return (
-        <footer className={clsx('footer', props.fixed && 'fixed')}>
+        <footer className={clsx('footer', props.fixed && 'fixed', props.utility)}>
             <FooterGroup>
                 <FooterItem>
                     <h5>{translation.footer.otherLinks}</h5>

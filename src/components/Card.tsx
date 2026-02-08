@@ -1,26 +1,20 @@
-import { ReactNode } from 'react';
-
+import clsx from 'clsx';
 import { Fancybox } from './Fancybox';
 import { Button } from './Form';
-
 import { useTranslation } from '../hooks/use-locale';
-
+import { BaseParentComponent } from '../types';
 import '../styles/components/Card.scss';
 
-interface CardProps {
-    children?: ReactNode;
+export function Card(props: BaseParentComponent) {
+    return <div className={clsx('card', props.utility)}>{props.children}</div>;
 }
 
-export function Card(props: CardProps) {
-    return <div className="card">{props.children}</div>;
-}
-
-interface GalleryImage {
+export interface GalleryImage {
     src: string;
     alt: string;
 }
 
-interface CardGalleryProps {
+export interface CardGalleryProps extends BaseParentComponent {
     images: Array<GalleryImage>;
 }
 
@@ -28,7 +22,7 @@ export function CardGallery(props: CardGalleryProps) {
     const translation = useTranslation();
 
     return (
-        <div className="card-gallery">
+        <div className={clsx('card-gallery', props.utility)}>
             <Fancybox>
                 {props.images.map((image, i) => (
                     <a data-fancybox="gallery" href={image.src} key={image.src}>

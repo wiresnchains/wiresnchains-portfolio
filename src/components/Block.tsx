@@ -1,23 +1,14 @@
-import { forwardRef, ReactNode } from "react";
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+import { BaseParentComponent } from '../types';
+import '../styles/components/block.scss';
 
-import "../styles/components/Block.scss";
-
-interface BlockProps {
-    children?: ReactNode;
-}
-
-export const Block = forwardRef<HTMLElement, BlockProps>((props, ref) => (
-    <section className="block" ref={ref}>
+export const Block = forwardRef<HTMLElement, BaseParentComponent>((props, ref) => (
+    <section className={clsx('block', props.utility)} ref={ref}>
         {props.children}
     </section>
 ));
 
-interface BlockTitleProps {
-    children?: ReactNode;
-}
-
-export function BlockTitle(props: BlockTitleProps) {
-    return (
-        <h2 className="block-title">{props.children}</h2>
-    );
+export function BlockTitle(props: BaseParentComponent) {
+    return <h2 className={clsx('block-title', props.utility)}>{props.children}</h2>;
 }

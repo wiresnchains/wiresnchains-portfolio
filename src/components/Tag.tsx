@@ -1,15 +1,14 @@
-import { ReactNode } from "react";
+import clsx from 'clsx';
+import { BaseParentComponent } from '../types';
+import '../styles/components/Tag.scss';
 
-import "../styles/components/Tag.scss";
-
-interface TagProps {
+export interface TagProps extends BaseParentComponent {
     label: string;
-    children?: ReactNode;
 }
 
 export function Tag(props: TagProps) {
     return (
-        <span className="tag">
+        <span className={clsx('tag', props.utility)}>
             <span className="label">{props.label}</span>
             {props.children}
         </span>

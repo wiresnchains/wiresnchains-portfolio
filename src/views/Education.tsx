@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { Card } from '../components/Card';
 import { Button } from '../components/Form';
-import { Inline } from '../components/Inline';
 import { Modal, ModalHeader } from '../components/Modal';
+import { Block, BlockTitle } from '../components/Block';
+import { FluidContainer } from '../components/FluidContainer';
 import { useTranslation } from '../hooks/use-locale';
 
-export function Education() {
+export const Education = forwardRef<HTMLDivElement>((_, ref) => {
     const translation = useTranslation();
     const [showScaldaResults, setShowScaldaResuts] = useState(false);
     const [showIskResults, setShowIskResults] = useState(false);
@@ -14,48 +15,54 @@ export function Education() {
 
     return (
         <>
-            <Inline center>
-                <Card>
-                    <h3>Scalda Software Development MBO-4</h3>
-                    <p>Vlissinen, NL</p>
-                    <p>
-                        {translation.common.august} 2024 - {translation.common.august} 2028
-                    </p>
-                    <Button type="primary" onClick={() => setShowScaldaResuts(true)}>
-                        {translation.common.learnMore}
-                    </Button>
-                </Card>
-                <Card>
-                    <h3>ISK Walcheren</h3>
-                    <p>Middelburg, NL</p>
-                    <p>
-                        {translation.common.august} 2022 - {translation.common.july} 2024
-                    </p>
-                    <Button type="primary" onClick={() => setShowIskResults(true)}>
-                        {translation.common.learnMore}
-                    </Button>
-                </Card>
-                <Card>
-                    <h3>JAMM Online School</h3>
-                    <p>Kyiv, UA</p>
-                    <p>
-                        {translation.common.september} 2020 - {translation.common.june} 2022
-                    </p>
-                    <Button type="primary" onClick={() => setShowJammResults(true)}>
-                        {translation.common.learnMore}
-                    </Button>
-                </Card>
-                <Card>
-                    <h3>British International School of Ukraine</h3>
-                    <p>Kyiv, UA</p>
-                    <p>
-                        {translation.common.september} 2013 - {translation.common.june} 2020
-                    </p>
-                    <Button type="primary" onClick={() => setShowBisuResults(true)}>
-                        {translation.common.learnMore}
-                    </Button>
-                </Card>
-            </Inline>
+            <Block ref={ref}>
+                <BlockTitle>{translation.navigation.education}</BlockTitle>
+
+                <FluidContainer center>
+                    <div className="flex wrap g-2 scale-mobile">
+                        <Card>
+                            <h3>Scalda Software Development MBO-4</h3>
+                            <p>Vlissinen, NL</p>
+                            <p>
+                                {translation.common.august} 2024 - {translation.common.august} 2028
+                            </p>
+                            <Button type="primary" onClick={() => setShowScaldaResuts(true)}>
+                                {translation.common.learnMore}
+                            </Button>
+                        </Card>
+                        <Card>
+                            <h3>ISK Walcheren</h3>
+                            <p>Middelburg, NL</p>
+                            <p>
+                                {translation.common.august} 2022 - {translation.common.july} 2024
+                            </p>
+                            <Button type="primary" onClick={() => setShowIskResults(true)}>
+                                {translation.common.learnMore}
+                            </Button>
+                        </Card>
+                        <Card>
+                            <h3>JAMM Online School</h3>
+                            <p>Kyiv, UA</p>
+                            <p>
+                                {translation.common.september} 2020 - {translation.common.june} 2022
+                            </p>
+                            <Button type="primary" onClick={() => setShowJammResults(true)}>
+                                {translation.common.learnMore}
+                            </Button>
+                        </Card>
+                        <Card>
+                            <h3>British International School of Ukraine</h3>
+                            <p>Kyiv, UA</p>
+                            <p>
+                                {translation.common.september} 2013 - {translation.common.june} 2020
+                            </p>
+                            <Button type="primary" onClick={() => setShowBisuResults(true)}>
+                                {translation.common.learnMore}
+                            </Button>
+                        </Card>
+                    </div>
+                </FluidContainer>
+            </Block>
 
             <Modal show={showScaldaResults}>
                 <ModalHeader onClose={() => setShowScaldaResuts(false)}>
@@ -86,4 +93,4 @@ export function Education() {
             </Modal>
         </>
     );
-}
+});

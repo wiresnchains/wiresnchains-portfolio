@@ -1,19 +1,15 @@
-import { ReactNode } from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import { BaseParentComponent } from '../types';
+import '../styles/components/FluidContainer.scss';
 
-import "../styles/components/FluidContainer.scss";
-
-interface FluidContainerProps {
+export interface FluidContainerProps extends BaseParentComponent {
     center?: boolean;
-    children?: ReactNode;
 }
 
 export function FluidContainer(props: FluidContainerProps) {
     return (
-        <div className={clsx("fluid-container", props.center && "center")}>
-            <div className="content">
-                {props.children}
-            </div>
+        <div className={clsx('fluid-container', props.center && 'center', props.utility)}>
+            <div className="content">{props.children}</div>
         </div>
     );
 }

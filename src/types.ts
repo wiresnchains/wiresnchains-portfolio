@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
 
-export interface BaseParentComponent {
+export interface BaseComponent {
+    utility?: string;
+}
+
+export interface BaseParentComponent extends BaseComponent {
     children?: ReactNode;
 }

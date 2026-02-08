@@ -1,42 +1,36 @@
 import clsx from 'clsx';
-import { FormEvent, forwardRef, HTMLInputTypeAttribute, MouseEventHandler, ReactNode, useRef, useState } from 'react';
+import { FormEvent, forwardRef, HTMLInputTypeAttribute, MouseEventHandler, useRef, useState } from 'react';
 import { Alert } from './Alert';
 import { useTranslation } from '../hooks/use-locale';
-import { BaseParentComponent } from '../types';
-
+import { BaseComponent, BaseParentComponent } from '../types';
 import '../styles/components/Form.scss';
 
-interface FormProps extends BaseParentComponent {
+export interface FormProps extends BaseParentComponent {
     onSubmit?(e: FormEvent<HTMLFormElement>): void;
 }
 
 export function Form(props: FormProps) {
     return (
-        <form className="form" onSubmit={props.onSubmit}>
+        <form className={clsx('form', props.utility)} onSubmit={props.onSubmit}>
             {props.children}
         </form>
     );
 }
 
-interface FormRowProps {
-    children?: ReactNode;
+export function FormRow(props: BaseParentComponent) {
+    return <div className={clsx('form-row', props.utility)}>{props.children}</div>;
 }
 
-export function FormRow(props: FormRowProps) {
-    return <div className="form-row">{props.children}</div>;
-}
-
-interface ButtonProps {
+export interface ButtonProps extends BaseParentComponent {
     type: 'primary' | 'secondary';
     onClick?: MouseEventHandler<HTMLButtonElement>;
-    children?: ReactNode;
     submit?: boolean;
 }
 
 export function Button(props: ButtonProps) {
     return (
         <button
-            className={clsx('btn', `btn-${props.type}`)}
+            className={clsx('btn', `btn-${props.type}`, props.utility)}
             onClick={props.onClick}
             type={props.submit ? 'submit' : undefined}
         >
@@ -45,23 +39,29 @@ export function Button(props: ButtonProps) {
     );
 }
 
-interface InputProps {
+export interface InputProps extends BaseComponent {
     id?: string;
     type?: HTMLInputTypeAttribute;
     placeholder?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-    <input className="textbox" id={props.id} type={props.type} placeholder={props.placeholder} ref={ref} />
+    <input
+        className={clsx('textbox', props.utility)}
+        id={props.id}
+        type={props.type}
+        placeholder={props.placeholder}
+        ref={ref}
+    />
 ));
 
-interface TextareaProps {
+interface TextareaProps extends BaseComponent {
     id?: string;
     placeholder?: string;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => (
-    <textarea className="textbox" id={props.id} placeholder={props.placeholder} ref={ref} />
+    <textarea className={clsx('textbox', props.utility)} id={props.id} placeholder={props.placeholder} ref={ref} />
 ));
 
 export function ContactForm() {
