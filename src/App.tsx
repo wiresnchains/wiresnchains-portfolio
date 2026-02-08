@@ -32,7 +32,7 @@ export function App() {
             <AboutMe ref={aboutMe} />
             <Projects ref={projects} />
             <Experience ref={tools} />
-            <Education ref={projects} />
+            <Education ref={education} />
             <Contact ref={contact} />
 
             <Footer />
