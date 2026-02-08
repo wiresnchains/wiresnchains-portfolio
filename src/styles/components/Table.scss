@@ -1,0 +1,20 @@
+@use '../settings/sizing';
+@use '../settings/colors';
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+
+    .table-row {
+        .table-header {
+            font-weight: 600;
+            background: colors.$table-accent;
+        }
+
+        .table-header,
+        .table-data {
+            padding: sizing.$item-spacing;
+            border: 1px solid colors.$border;
+        }
+    }
+}
