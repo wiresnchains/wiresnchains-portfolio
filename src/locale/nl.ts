@@ -22,7 +22,7 @@ export const NL: Locale = {
         aboutMe: 'Over mij',
         projects: 'Projecten',
         education: 'Educatie',
-        tools: 'Tools',
+        experience: 'Ervaring',
     },
 
     contantForm: {
