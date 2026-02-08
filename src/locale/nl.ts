@@ -44,10 +44,11 @@ export const NL: Locale = {
     aboutMe: {
         heading: 'Mijn naam is Danya,',
         paragraphs: [
-            'Ik ben 18 jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kyiv toen ik 6 jaar oud was, dus daar ben ik opgegroeid. Ik ben een introvert dus ben ik aandachtig, zelfstanding en stil.',
-            'Toen ik 10 jaar oud was, begon ik met het studeren van software development door kleine appjes met Visual Basic/Python en nu studeer ik Software Development bij Scalda.',
-            'Naast software development hou ik veel van prog metal en prog rockmuziek, zoals Bring Me The Horizon of  Unprocessed, en speel ik elektrische gitaar. Ik snowboard ook graag – mijn familie nam me elke winter mee naar de Karpaten.',
-            'In de toekomst wil ik een full-stack developer worden, omdat ik zowel van back- als front-end development leuk vind.',
+            'Ik ben 18 jaar oud en geboren in Oekraïne. Mijn familie verhuisde naar Kiev toen ik 6 jaar oud was, dus ik ben daar opgegroeid. Ik ben een jonge, gedreven software developer.',
+            'Toen ik 10 jaar oud was, begon ik met het leren van software development door kleine apps te maken met Visual Basic/Python, en nu studeer ik Software Development aan Scalda.',
+            'Naast software development speel ik gitaar, luister en maak ik graag muziek en snowboard ik.',
+            'Ik hou ook van mediavormgeving. Ik heb dit vroeger bestudeerd toen ik jonger was, daarom heb ik een voorkeur voor front-end development, maar ik vind zowel back- als front-end development leuk.',
+            'In de toekomst wil ik een full-stack developer worden.',
         ],
     },
 

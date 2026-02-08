@@ -44,10 +44,11 @@ export const EN: Locale = {
     aboutMe: {
         heading: 'My name is Danya,',
         paragraphs: [
-            'I am 18 years old and was born in Ukraine. My family moved to Kyiv when I was 6 years old, so I grew up there. I am an introvert, so I am attentive, independent, and quiet.',
+            'I am 18 years old and was born in Ukraine. My family moved to Kyiv when I was 6 years old, so I grew up there. I am a young, driven software developer.',
             'When I was 10 years old, I started studying software development by making small apps with Visual Basic/Python, and now I am studying Software Development at Scalda.',
-            'Besides software development, I really love prog metal and prog rock music, such as Bring Me The Horizon or Unprocessed, and I play electric guitar. I also enjoy snowboarding—my family took me to the Carpathians every winter.',
-            'In the future, I want to become a full-stack developer because I enjoy both back-end and front-end development.',
+            'Besides software development, I play guitar, love listening, making music and snowboarding.',
+            "I also like graphic design, I used to study it when I was younger, that's why I have a preference for front-end development, but I enjoy both back- and front-end development.",
+            'In the future, I want to become a full-stack developer.',
         ],
     },
 
