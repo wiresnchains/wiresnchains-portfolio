@@ -1,19 +1,15 @@
-@use "../settings/sizing.scss";
-@use "../settings/timing.scss";
+@use '../settings/sizing.scss';
+@use '../settings/timing.scss';
 
 .card {
     background: #fff;
     padding: sizing.$item-spacing * 4;
     width: calc(50% - sizing.$item-spacing);
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: sizing.$item-spacing;
     text-align: left;
     box-shadow: 0 0.1rem 1rem rgb(#000, 0.01);
-
-    > * {
-        width: 100%;
-    }
 
     .card-gallery {
         position: relative;
@@ -45,7 +41,9 @@
             align-items: center;
             visibility: hidden;
             opacity: 0;
-            transition: opacity timing.$anim-time, visibility timing.$anim-time;
+            transition:
+                opacity timing.$anim-time,
+                visibility timing.$anim-time;
         }
     }
 }
