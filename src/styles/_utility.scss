@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.p-1 {
+    padding: sizing.$item-spacing;
+}
+
 .flex {
     display: flex;
 
@@ -28,15 +32,11 @@
     }
 
     &.g-1 {
-        gap: 0.5rem;
+        gap: sizing.$item-spacing;
     }
 
     &.g-2 {
-        gap: 1rem;
-    }
-
-    &.g-3 {
-        gap: 2rem;
+        gap: sizing.$item-spacing * 2;
     }
 
     &.scale-mobile > * {
@@ -44,6 +44,10 @@
             width: 100%;
         }
     }
+}
+
+.flex-1-self {
+    flex: 1;
 }
 
 .text-left {

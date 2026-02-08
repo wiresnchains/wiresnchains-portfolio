@@ -14,14 +14,14 @@ export const AboutMe = forwardRef<HTMLDivElement>((_, ref) => {
             <BlockTitle>{translation.navigation.aboutMe}</BlockTitle>
 
             <FluidContainer center>
-                <div className="flex flex-1 wrap g-2 scale-mobile">
+                <div className="flex g-2 wrap scale-mobile">
                     <Fancybox>
                         <a data-fancybox="gallery" href={profile}>
                             <img className="about-me-profile" src={profile} alt="profile" />
                         </a>
                     </Fancybox>
 
-                    <div className="flex vertical g-2 text-left">
+                    <div className="flex flex-1-self vertical g-2 text-left p-1">
                         <h3>{translation.aboutMe.heading}</h3>
 
                         {translation.aboutMe.paragraphs.map((text, i) => (
