@@ -3,7 +3,11 @@ import { BaseParentComponent } from '../types';
 import '../styles/components/Table.scss';
 
 export function Table(props: BaseParentComponent) {
-    return <table className={clsx('table', props.utility)}>{props.children}</table>;
+    return (
+        <div className={clsx('table-container', props.utility)}>
+            <table className={clsx('table', props.utility)}>{props.children}</table>
+        </div>
+    );
 }
 
 export function TableRow(props: BaseParentComponent) {
