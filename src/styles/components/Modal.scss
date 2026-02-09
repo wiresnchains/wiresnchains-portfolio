@@ -38,6 +38,8 @@
         background-color: #fff;
         padding: 1.5rem;
         width: 55rem;
+        max-height: 80dvh;
+        overflow-y: auto;
 
         @media only screen and (max-width: sizing.$mobile-width-threshold) {
             max-width: calc(100% - 2rem);
