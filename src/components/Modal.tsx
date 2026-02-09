@@ -26,7 +26,7 @@ export function ModalHeader(props: ModalHeaderProps) {
         <div className={clsx('modal-header', props.utility)}>
             {props.children}
             <button className="modal-close" onClick={props.onClose}>
-                <FiX />
+                <FiX className="icon" />
             </button>
         </div>
     );

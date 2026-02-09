@@ -62,6 +62,10 @@
                 &:hover {
                     animation: spin 0.5s infinite;
                 }
+
+                .icon {
+                    display: block;
+                }
             }
         }
     }
