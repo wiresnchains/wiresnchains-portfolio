@@ -11,8 +11,12 @@ export function NavGroup(props: BaseParentComponent) {
     return <ul className="nav-group">{props.children}</ul>;
 }
 
-export function NavItem(props: BaseParentComponent) {
-    return <li className="nav-item">{props.children}</li>;
+export interface NavItemProps extends BaseParentComponent {
+    hideOnMobile?: boolean;
+}
+
+export function NavItem(props: NavItemProps) {
+    return <li className={clsx('nav-item', props.hideOnMobile && 'hide-mobile', props.utility)}>{props.children}</li>;
 }
 
 export function Nav(props: BaseParentComponent) {
@@ -57,21 +61,21 @@ export function Navbar(props: NavbarProps) {
                         <h3>{translation.hero.heading}</h3>
                     </a>
                 </NavItem>
-                <NavItem>
+                <NavItem hideOnMobile>
                     <a onClick={() => props.aboutMe.current?.scrollIntoView()}>{translation.navigation.aboutMe}</a>
                 </NavItem>
-                <NavItem>
+                <NavItem hideOnMobile>
                     <a onClick={() => props.projects.current?.scrollIntoView()}>{translation.navigation.projects}</a>
                 </NavItem>
-                <NavItem>
+                <NavItem hideOnMobile>
                     <a onClick={() => props.experience.current?.scrollIntoView()}>
                         {translation.navigation.experience}
                     </a>
                 </NavItem>
-                <NavItem>
+                <NavItem hideOnMobile>
                     <a onClick={() => props.education.current?.scrollIntoView()}>{translation.navigation.education}</a>
                 </NavItem>
-                <NavItem>
+                <NavItem hideOnMobile>
                     <a onClick={() => props.contact.current?.scrollIntoView()}>{translation.navigation.contact}</a>
                 </NavItem>
                 <NavItem>
