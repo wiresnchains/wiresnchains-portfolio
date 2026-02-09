@@ -65,8 +65,8 @@ export const Education = forwardRef<HTMLDivElement>((_, ref) => {
                 </FluidContainer>
             </Block>
 
-            <Modal show={showScaldaResults}>
-                <ModalHeader onClose={() => setShowScaldaResuts(false)}>
+            <Modal show={showScaldaResults} close={() => setShowScaldaResuts(false)}>
+                <ModalHeader close={() => setShowScaldaResuts(false)}>
                     <h3>Scalda</h3>
                     <p className="muted">{translation.education.notGraduatedYet}</p>
                 </ModalHeader>
@@ -184,8 +184,8 @@ export const Education = forwardRef<HTMLDivElement>((_, ref) => {
                 </div>
             </Modal>
 
-            <Modal show={showIskResults}>
-                <ModalHeader onClose={() => setShowIskResults(false)}>
+            <Modal show={showIskResults} close={() => setShowIskResults(false)}>
+                <ModalHeader close={() => setShowIskResults(false)}>
                     <h3>ISK</h3>
                     <p className="muted">{translation.education.graduated}</p>
                 </ModalHeader>
@@ -233,8 +233,8 @@ export const Education = forwardRef<HTMLDivElement>((_, ref) => {
                 </div>
             </Modal>
 
-            <Modal show={showJammResults}>
-                <ModalHeader onClose={() => setShowJammResults(false)}>
+            <Modal show={showJammResults} close={() => setShowJammResults(false)}>
+                <ModalHeader close={() => setShowJammResults(false)}>
                     <h3>JAMM</h3>
                     <p className="muted">{translation.education.graduated}</p>
                 </ModalHeader>
@@ -298,8 +298,8 @@ export const Education = forwardRef<HTMLDivElement>((_, ref) => {
                 </div>
             </Modal>
 
-            <Modal show={showBisuResults}>
-                <ModalHeader onClose={() => setShowBisuResults(false)}>
+            <Modal show={showBisuResults} close={() => setShowBisuResults(false)}>
+                <ModalHeader close={() => setShowBisuResults(false)}>
                     <h3>BISU</h3>
                     <p className="muted">{translation.education.graduated}</p>
                 </ModalHeader>

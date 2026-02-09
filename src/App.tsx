@@ -1,7 +1,6 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { Navbar } from './components/Nav';
 import { Footer } from './components/Footer';
-import { ContactModal } from './components/Modal';
 import { Hero } from './views/Hero';
 import { AboutMe } from './views/AboutMe';
 import { Experience } from './views/Experience';
@@ -12,7 +11,6 @@ import { useTranslation } from './hooks/use-locale';
 import { useTitle } from './hooks/use-title';
 
 export function App() {
-    const [showContact, setShowContact] = useState(false);
     const translation = useTranslation();
 
     const aboutMe = useRef<HTMLDivElement | null>(null);
@@ -33,7 +31,7 @@ export function App() {
                 contact={contact}
             />
 
-            <Hero setShowContact={setShowContact} aboutMeRef={aboutMe} />
+            <Hero aboutMeRef={aboutMe} />
 
             <AboutMe ref={aboutMe} />
             <Projects ref={projects} />
@@ -42,8 +40,6 @@ export function App() {
             <Contact ref={contact} />
 
             <Footer />
-
-            <ContactModal show={showContact} onClose={() => setShowContact(false)} />
         </>
     );
 }
